@@ -63,7 +63,7 @@
               <form>
                     <div class="form-group row">
                         <div class="col-sm-5 mx-auto">
-                        <input type="number" class="form-control" id="inputEmail3" placeholder="TicketID">
+                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="TicketID">
                         </div>
                     </div>
               <button type=submit class="btn btn-danger">Search</a></button>
@@ -80,7 +80,7 @@
               <form>
                     <div class="form-group row">
                         <div class="col-sm-5 mx-auto">
-                        <input type="number" class="form-control" id="inputEmail3" placeholder="TicketID">
+                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="TicketID">
                         </div>
                     </div>
               <button type=submit class="btn btn-danger">Search</a></button>
@@ -97,7 +97,7 @@
               <form>
                     <div class="form-group row">
                         <div class="col-sm-5 mx-auto">
-                        <input type="number" class="form-control" id="inputEmail3" placeholder="TicketID">
+                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="TicketID">
                         </div>
                     </div>
               <button type=submit class="btn btn-danger">Search</a></button>
