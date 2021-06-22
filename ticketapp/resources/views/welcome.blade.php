@@ -63,7 +63,7 @@
               <form>
                     <div class="form-group row">
                         <div class="col-sm-5 mx-auto">
-                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="TicketID">
+                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="Search TicketID">
                         </div>
                     </div>
               <button type=submit class="btn btn-danger">Search</a></button>
@@ -80,7 +80,7 @@
               <form>
                     <div class="form-group row">
                         <div class="col-sm-5 mx-auto">
-                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="TicketID">
+                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="Search TicketID">
                         </div>
                     </div>
               <button type=submit class="btn btn-danger">Search</a></button>
@@ -97,7 +97,7 @@
               <form>
                     <div class="form-group row">
                         <div class="col-sm-5 mx-auto">
-                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="TicketID">
+                        <input type="number" class="form-control animate__animated animate__fadeInDown" id="inputEmail3" placeholder="Search TicketID">
                         </div>
                     </div>
               <button type=submit class="btn btn-danger">Search</a></button>
@@ -207,7 +207,6 @@ It is a long established fact that a reader will be distracted by the readable c
   <footer id="footer">
     <div class="container">
       <h3>Green</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
