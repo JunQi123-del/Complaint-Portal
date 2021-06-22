@@ -13,6 +13,7 @@
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/venobox.min.js') !!}"> </script>
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/owl.carousel.min.js') !!}"> </script>
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/isotope.pkgd.min.js') !!}"> </script>
+        <script src="https://use.fontawesome.com/84ee66b848.js"></script>
 
 
         <!-- Styles -->
@@ -23,7 +24,7 @@
          <link href="/css/welcomepage/animate.min.css" rel="stylesheet">
          <link href="/css/welcomepage/venobox.min.css" rel="stylesheet">
          <link href="/css/welcomepage/owl.carousel.min.css" rel="stylesheet">
-        
+         <link href="/css/welcomepage/accordion.css" rel="stylesheet">
 
         
     </head>

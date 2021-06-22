@@ -118,127 +118,85 @@
       </a>
 
     </div>
-  </section><!-- End Hero -->
+  </section>
+  
+  <!---------------------------------------------------------------------- End Hero ---------------------------------------------------------------------------------->
 
   <main id="main">
    <!-- TODO Addin expansion bars here -->
-   <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="Complaintpanel">
-      <a data-toggle="collapse" data-parent="#accordionEx" href="#Complaintpanel" aria-expanded="false"
-        aria-controls="Complaintpanel">
-        <h5 class="mb-0">
-          Send a Complaint <i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
-      </a>
-    </div>
-    <!-- If want expansion panel to remain open after clicking another panel, omit the data-parent field in accordion-->
-    <!-- Card body -->
-    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne1"
-      data-parent="#accordionEx">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-        labore sustainable VHS.
-      </div>
-    </div>
-
+   <div class="container">
+<div class="accordion" id="accordionExample">
+  <div class="item">
+     <div class="item-header" id="headingOne">
+        <h2 class="mb-0">
+           <button class="btn btn-link" type="button" data-toggle="collapse"
+              data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+           Collapsible Item #1
+           <i class="fa fa-angle-down"></i>
+           </button>
+        </h2>
+     </div>
+     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+        data-parent="#accordionExample">
+        <div class="t-p">
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </div>
+     </div>
   </div>
-  <!-- Accordion card End-->
-
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="Feedbackpanel">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-        aria-expanded="false" aria-controls="collapseTwo2">
-        <h5 class="mb-0">
-          Send a feedback <i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
-      data-parent="#accordionEx">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-        labore sustainable VHS.
-      </div>
-    </div>
-
+  <div class="item">
+     <div class="item-header" id="headingTwo">
+        <h2 class="mb-0">
+           <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+           Collapsible Item #2
+           <i class="fa fa-angle-down"></i>
+           </button>
+        </h2>
+     </div>
+     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+        data-parent="#accordionExample">
+        <div class="t-p">
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </div>
+     </div>
   </div>
-  <!-- Accordion card End-->
-
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="Appealpanel">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
-        aria-expanded="false" aria-controls="collapseThree3">
-        <h5 class="mb-0">
-          Send an appeal<i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
-      data-parent="#accordionEx">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-        labore sustainable VHS.
-      </div>
-    </div>
-
+  <div class="item">
+     <div class="item-header" id="headingThree">
+        <h2 class="mb-0">
+           <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseThree" aria-expanded="false"
+              aria-controls="collapseThree">
+           Collapsible Item #3
+           <i class="fa fa-angle-down"></i>
+           </button>
+        </h2>
+     </div>
+     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+        data-parent="#accordionExample">
+        <div class="t-p">
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </div>
+     </div>
   </div>
-  <!-- Accordion card End-->
-
-      <div class="card-header" role="tab" id="Remarkpanel">
-      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
-        aria-expanded="false" aria-controls="collapseThree3">
-        <h5 class="mb-0">
-          Request for remark <i class="fas fa-angle-down rotate-icon"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
-      data-parent="#accordionEx">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-        wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-        eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-        assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-        farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-        labore sustainable VHS.
-      </div>
-    </div>
-
+  <div class="item">
+     <div class="item-header" id="headingFour">
+        <h2 class="mb-0">
+           <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+              data-target="#collapseFour" aria-expanded="false"
+              aria-controls="collapseFour">
+           Collapsible Item #4
+           <i class="fa fa-angle-down"></i>
+           </button>
+        </h2>
+     </div>
+     <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+        data-parent="#accordionExample">
+        <div class="t-p">
+           It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        </div>
+     </div>
   </div>
-
+</div>
 </div>
 <!-- Accordion wrapper -->
 
