@@ -21,11 +21,11 @@
         <i class="icofont-phone"></i> +1 5589 55488 55
       </div>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="skype"><i class="icofont-skype"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+        <a href="https://twitter.com/murdochuni?lang=en" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="https://www.facebook.com/MurdochUniversity/" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="https://www.instagram.com/murdochuniversity/?hl=en" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="https://www.murdoch.edu.au/"><i class="icofont-home"></i></a>
+        <a href="https://www.linkedin.com/school/murdoch-university/?originalSubdomain=au" class="linkedin"><i class="icofont-linkedin"></i></i></a>
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
+  <!-- =============================================================== Hero Section =============================================================================== -->
   <section id="hero">
    < <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 
@@ -123,7 +123,7 @@
   <!---------------------------------------------------------------------- End Hero ---------------------------------------------------------------------------------->
 
   <main id="main">
-   <!-- TODO Addin expansion bars here -->
+   <!-------------------------------------------------------------- TODO Addin expansion bars here -------------------------------------------------------------------->
    <div class="container">
 <div class="accordion" id="accordionExample">
   <div class="item">
@@ -198,7 +198,7 @@ It is a long established fact that a reader will be distracted by the readable c
   </div>
 </div>
 </div>
-<!-- Accordion wrapper -->
+<!------------------------------------------------------------------------------ Accordion wrapper End ---------------------------------------------------------------------------------------------------------------->
 
   
    </main>
