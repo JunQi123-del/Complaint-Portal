@@ -15,7 +15,7 @@ class InternalComment extends Migration
     {
         Schema::create('InternalCommnent',function(Blueprint $table){
             $table->bigIncrements('InternalCommentID');
-            $table->dateTime('DateTime');
+            $table->timestamps();
             $table->string('Message');
             $table->string('Attatchment');
             $table->unsignedBigInteger('TicketID');
