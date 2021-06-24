@@ -7,9 +7,42 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
-    // HasFactory allows you to build fake data for your models. 
-    // It is very useful for testing and seeding fake data into 
-    // your database to see your code in action before any real
-    // user data comes in. 
-    use HasFactory;
+    protected $fillable = [
+        'id',
+        'title',
+        'message',
+        'status',
+        'is_nonymous',
+        'category',
+        'user_background',
+        'student_id',
+        'school',
+        'first_name',
+        'last_name',
+        'email',
+        'attatchment'
+    ] ;
+
+    public function administrator ()
+    {
+        return $this->belongsTo(Administrator::class);
+    }
+
+    public function departmentAccount ()
+    {
+        return $this->belongsTo(DepartmentAccount::class);
+    }
+    
+    public function comments ()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function internalComments ()
+    {
+        return $this->hasMany(InternalComment::class);
+    }
 }
+
+
+
