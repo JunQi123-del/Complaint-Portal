@@ -20,15 +20,14 @@ class Ticket extends Migration
             $table->string('StatusName');
             $table->boolean('isAnonymous');
             $table->string('Category');
-            $table->boolean('IsStudent');
-            $table->unsignedBigInteger('StudentID')->nullable();
+            $table->string('userBackground');
+            $table->unsignedBigInteger('StudentID')->nullable(); // it can have a null value, thus not required
             $table->string('Major')->nullable();
             $table->string('FirstName')->nullable();
             $table->string('LastName')->nullable();
-            $table->string('Email')->unique()->nullable();
-            $table->dateTime('DateTime');
-            $table->dateTime('RDateTime')->nullable();
+            $table->string('Email')->nullable();
             $table->string('Attatchment')->nullable();
+            $table->timestamps();
             $table->unsignedBigInteger('AccountID');
             $table->unsignedBigInteger('DaccountID');
             $table->foreign('AccountID')->references('AccountID')->on('Administrator');
