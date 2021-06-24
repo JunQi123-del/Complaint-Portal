@@ -7,5 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'id',    // comment id
+        'comment',
+        'attatchment'
+    ] ;
+
+    public function ticket ()
+    {
+        return $this->belongsTo(Ticket::class);
+    }
+
+    public function administrator ()
+    {
+        return $this->belongsTo(Administrator::class);
+    }
 }
