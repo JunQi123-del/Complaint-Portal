@@ -15,7 +15,7 @@ class Comment extends Migration
     {
         Schema::create('Comment',function(Blueprint $table){
             $table->bigIncrements('CommentID');
-            $table->dateTime('DateTime');
+            $table->timestamps();
             $table->string('Message');
             $table->string('Attatchment');
             $table->unsignedBigInteger('TicketID');
