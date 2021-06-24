@@ -18,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     return view('welcome');
 });
+
+Route::get('/createTicket', function(){
+    return view('ticket.create');
+});
