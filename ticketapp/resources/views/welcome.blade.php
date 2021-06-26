@@ -13,23 +13,6 @@
 </div>
 */
 ?>
-
-<div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-    <div class="container d-flex">
-      <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="icofont-phone"></i> +1 5589 55488 55
-      </div>
-      <div class="social-links">
-        <a href="https://twitter.com/murdochuni?lang=en" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="https://www.facebook.com/MurdochUniversity/" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="https://www.instagram.com/murdochuniversity/?hl=en" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="https://www.murdoch.edu.au/"><i class="icofont-home"></i></a>
-        <a href="https://www.linkedin.com/school/murdoch-university/?originalSubdomain=au" class="linkedin"><i class="icofont-linkedin"></i></i></a>
-      </div>
-    </div>
-  </div>
-
   <!-- =============================================================== Hero Section =============================================================================== -->
   <section id="hero">
    < <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -125,6 +108,7 @@
         data-parent="#accordionExample">
         <div class="t-p">
 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
         </div>
      </div>
   </div>
