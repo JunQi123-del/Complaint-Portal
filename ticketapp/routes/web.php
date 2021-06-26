@@ -19,6 +19,8 @@ Route::get('/', 'PageController@index');
 
 
 Route::get('/createTicket', 'TicketController@store');
+Route::post('ckeditor/upload', 'CKEditorController@upload')->name('ckeditor.image-upload');
+
 
 
 
