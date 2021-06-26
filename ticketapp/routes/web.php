@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@index');
 
 
-Route::get('/createTicket', function(){
-    return view('ticket.create');
-});
+Route::get('/createTicket', 'TicketController@store');
+
+
 
