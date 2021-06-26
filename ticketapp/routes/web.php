@@ -22,3 +22,4 @@ Route::get('/', function(){
 Route::get('/createTicket', function(){
     return view('ticket.create');
 });
+
