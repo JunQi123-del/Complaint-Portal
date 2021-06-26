@@ -23,7 +23,7 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        return view('ticket.create');
     }
 
     /**
@@ -34,7 +34,12 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        return view('ticket.create');
+        //$this->validate($request, [
+            //'title' => 'required',
+            //'body' => 'required'
+
+            //return redirect('/')->with('success', 'Ticket Created');
+        //])
     }
 
     /**
