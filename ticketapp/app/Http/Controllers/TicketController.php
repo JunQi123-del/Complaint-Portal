@@ -34,7 +34,7 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('ticket.create');
     }
 
     /**
