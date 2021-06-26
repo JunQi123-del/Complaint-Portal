@@ -66,11 +66,12 @@
         @yield('content')
     </div>
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-    <script type="text/javascript">
-    CKEDITOR.replace('wysiwyg-editor', {
-        filebrowserUploadUrl: "{{route('ckeditor.image-upload', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
+    <script>
+        CKEDITOR.replace('wysiwyg-editor');
     </script>
+    
+    
+    });
 
         <!-- ======= Footer ======= -->
         <footer id="footer">
