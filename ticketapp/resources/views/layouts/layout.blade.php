@@ -25,7 +25,6 @@
          <link href="/css/welcomepage/venobox.min.css" rel="stylesheet">
          <link href="/css/welcomepage/owl.carousel.min.css" rel="stylesheet">
          <link href="/css/welcomepage/accordion.css" rel="stylesheet">
-         <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
          
 
 
