@@ -21,13 +21,13 @@
 
         <!-- Styles -->
          <link href="/css/app.css" rel="stylesheet"><!-- from bootstrap -->
-         <link href="/css/welcomepage/style.css" rel="stylesheet">
+          <link href="/css/welcomepage/style.css" rel="stylesheet"> 
          <link href="/css/welcomepage/icofont.min.css" rel="stylesheet">
          <link href="/css/welcomepage/boxicons.min.css" rel="stylesheet">
          <link href="/css/welcomepage/animate.min.css" rel="stylesheet">
          <link href="/css/welcomepage/venobox.min.css" rel="stylesheet">
          <link href="/css/welcomepage/owl.carousel.min.css" rel="stylesheet">
-         <link href="/css/welcomepage/accordion.css" rel="stylesheet">
+         <link href="/css/welcomepage/accordion.css" rel="stylesheet"> 
          
 
 
@@ -51,7 +51,7 @@
 
         <!--<h1 class="logo mr-auto"><a href="{{url('/')}}">Green</a></h1>-->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="{{url('/')}}" class="logo mr-auto"><img src="/image/Logo.png" alt="Logo" class="img-fluid" ></a>
+        <a href="{{url('/')}}" class="logo mr-auto"><img src="/image/wrait.Jpg" alt="Logo" class="img-fluid" ></a>
 
         
 
@@ -61,17 +61,13 @@
     </header><!-- End Header -->
 
     
-    <body>
-    <div class="container">
+    <body>  
         @yield('content')
-    </div>
     <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('wysiwyg-editor');
     </script>
     
-    
-    });
 
         <!-- ======= Footer ======= -->
         <footer id="footer">
@@ -99,7 +95,7 @@
 
         <!-- back to top have not implemen -->
         <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
+                
     </body>
 
 </html>
