@@ -14,7 +14,37 @@ class AdminController extends Controller
         return view('dashboards.admins.alltickets');
     }
 
-    function departmentview(){
-        return view('dashboards.admins.departmentview');
+    function allaccount(){
+        return view('dashboards.admins.allaccounts');
+    }
+    function feedback (){
+        return view('dashboards.admins.feedback');
+    }
+
+    function investigating(){
+        return view('dashboards.admins.investigating');
+    }
+
+    function nonanonymous(){
+        return view('dashboards.admins.non-anonymous');
+    }
+    function anonymous (){
+        return view('dashboards.admins.anonymous');
+    }
+
+    function resolved(){
+        return view('dashboards.admins.resolved');
+    }
+
+    function complaint(){
+        return view('dashboards.admins.complaint');
+    }
+
+    function appeal(){
+        return view('dashboards.admins.appeal');
+    }
+
+    function remark(){
+        return view('dashboards.admins.remark');
     }
 }
