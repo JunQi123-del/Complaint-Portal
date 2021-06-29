@@ -71,6 +71,7 @@ class RegisterController extends Controller
             'role' =>2,
             'password' => Hash::make($data['password']),
         ]);
+
     }
    /* protected function register(request $request){
         return redirect()->route('register')->with('Success','Account has been created');
