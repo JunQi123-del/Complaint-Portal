@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('logo')
+<a class="navbar-brand" href="{{ route('admin.dashboard') }}">
+ {{ config('app.name', 'Laravel') }}
+ @endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,11 +13,15 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('admin.register') }}">
                         @csrf
-                        @if(Session::get('Success'))
+                        @if(Session::get('success'))
                         <div class ="alert alert-success">
-                            {{Session::get('Success')}}
+                            {{Session::get('success')}}
+                        </div>
+                        @elseif(Session::get('error'))
+                        <div class ="alert alert-danger">
+                            {{Session::get('error')}}
                         </div>
                         @endif
 
@@ -20,13 +29,9 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                 <span class = "text-danger">@error('name'){{$message}}@enderror</span>
+                                
                             </div>
                         </div>
 
@@ -36,11 +41,7 @@
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <span class = "text-danger">@error('email'){{$message}}@enderror</span>
                             </div>
                         </div>
 
@@ -50,19 +51,15 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <span class = "text-danger">@error('password'){{$message}}@enderror</span>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" value="{{old('cpassword')}}" required autocomplete="new-password">
+                                <span class = "text-danger">@error('cpassword'){{$message}}@enderror</span>
                             </div>
                         </div>
 

@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+
+@section('logo')
+<a class="navbar-brand" href="{{url('/')}}">
+ {{ config('app.name', 'Laravel') }}
+ @endsection
+
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
