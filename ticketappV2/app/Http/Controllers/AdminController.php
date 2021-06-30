@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Models\user;
+use Illuminate\Support\Facades\Auth;
 
 
 class AdminController extends Controller
@@ -12,6 +13,30 @@ class AdminController extends Controller
     function dashboard (){
         return view('dashboards.admins.dashboard');
     }
+
+    protected function showRegistrationForm(){
+        return view('dashboards.admins.register');
+    }
+
+    protected function Register(request $request){
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+        $user = new User();
+        $user->name =$request->name;
+        $user->email =$request->email;
+        $user->role = 2;
+        $user->password =\Hash::make($request->password);
+        if($user->save() ){
+            return redirect()->back()->with('success','User has been registered successfully');
+        }else{
+            return redirect()->back()->with('error','Failed to register');
+        }
+
+    }
+
 
     function alltickets(){
         $allTickets = Ticket::all();
@@ -22,6 +47,8 @@ class AdminController extends Controller
         $allAccounts = user::all();
         return view('dashboards.admins.allaccounts',compact('allAccounts'));
     }
+
+
     function feedback (){
         $feedback = Ticket::where('category','Feedback')->get();
         return view('dashboards.admins.feedback',compact('feedback'));
