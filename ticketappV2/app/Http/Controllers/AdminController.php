@@ -37,6 +37,11 @@ class AdminController extends Controller
 
     }
 
+    function show($id)
+    {
+        return view('dashboards.admins.viewticket',['id'=>$id]);
+    }
+
 
     function alltickets(){
         $allTickets = Ticket::all();
@@ -87,5 +92,10 @@ class AdminController extends Controller
     function remark(){
         $remark = Ticket::where('category','Remark')->get();
         return view('dashboards.admins.remark',compact('remark'));
+    }
+
+    function review(){
+        $review = Ticket::where('category','To Be Reviewed')->get();
+        return view('dashboards.admins.review',compact('review'));
     }
 }

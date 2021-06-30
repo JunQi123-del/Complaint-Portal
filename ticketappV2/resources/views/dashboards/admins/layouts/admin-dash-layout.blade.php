@@ -251,6 +251,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.review') }}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                To Be Reviewed
+              </p>
+            </a>
+          </li>
           </ul>
           </nav>
       <!-- /.sidebar-menu -->
@@ -319,7 +327,7 @@
 <script src="plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-
+<!-- Datatables -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -347,7 +355,6 @@
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-
 
 
     $('#example2').DataTable({

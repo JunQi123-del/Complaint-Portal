@@ -1,6 +1,6 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','Remark')
-@section('header','remark')
+@section('title','To be Reviewed')
+@section('header','To Be Reviewed')
 
 @section('contents')
 
@@ -23,7 +23,7 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($remark as $row)
+    @foreach($review as $row)
     <tr>
         <td>{{$row['id']}}</td>
         <td>{{$row['title']}}</td>
@@ -42,7 +42,6 @@
     @endforeach
   </tbody>
 </table>
-
 
 
 @endsection
