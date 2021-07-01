@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('All open') }}</div>
-                <h4>Hi Department:{{Auth::user()->name}}</h4>
+                <h4>Hi Department:{{Auth::user()->id}}</h4>
 
                 <div class="card-body">
                     @if (session('status'))
