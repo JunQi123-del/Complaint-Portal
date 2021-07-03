@@ -18,8 +18,6 @@ class CreateDepartmentAccountsTable extends Migration
             $table->string('depart_acc_name');
             $table->string('depart_acc_pwd');
             $table->string('depart_acc_email');
-            $table->unsignedBigInteger('depart_id');
-            $table->foreign('depart_id')->references('id')->on('departments');
             });
     }
 
