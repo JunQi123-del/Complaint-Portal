@@ -28,10 +28,6 @@ class CreateTicketsTable extends Migration
             $table->string('email')->nullable();
             $table->string('attatchment')->nullable();
             $table->timestamps();
-            $table->unsignedBigInteger('admin_id');
-            $table->unsignedBigInteger('depart_acc_id');
-            $table->foreign('admin_id')->references('id')->on('administrators');
-            $table->foreign('depart_acc_id')->references('id')->on('department_accounts');
              });
     }
 
