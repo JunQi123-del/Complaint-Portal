@@ -10,7 +10,6 @@ class Department extends Model
     protected $fillable = [
         'id',    // department id
         'depart_name',
-        'admin_id'
     ] ;
 
     public function departmentAccounts ()
