@@ -11,8 +11,6 @@ class InternalComment extends Model
         'id',    // internal comment id
         'internal_comment',
         'attatchment',
-        'depart_acc_id',
-        'admin_id'
     ] ;
 
     public function ticket()
