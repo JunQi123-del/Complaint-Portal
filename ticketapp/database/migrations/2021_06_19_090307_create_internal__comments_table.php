@@ -18,11 +18,6 @@ class CreateInternalCommentsTable extends Migration
             $table->timestamps();
             $table->text('internal_comment');
             $table->string('attatchment');
-            $table->unsignedBigInteger('depart_acc_id');
-            $table->unsignedBigInteger('admin_id');
-            $table->foreign('depart_acc_id')->references('id')->on('department_accounts');
-            $table->foreign('admin_id')->references('id')->on('administrators');
-
         });
     }
 
