@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     function allopen (){
-        $allTickets = Ticket::where();
+        $allTickets = Ticket::all();
         return view('dashboards.users.allopen',compact('allTickets'));
     }
 

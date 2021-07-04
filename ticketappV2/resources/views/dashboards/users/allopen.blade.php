@@ -22,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($Nanonymous as $row)
+    @foreach($allTickets as $row)
     <tr>
         
         <td>{{$row['id']}}</td>
@@ -48,4 +48,3 @@
 @endsection
 
 
-@endsection
