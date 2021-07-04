@@ -12,7 +12,6 @@ class DepartmentAccount extends Model
         'depart_acc_name',
         'depart_acc_pwd',
         'depart_acc_email',
-        'depart_id'
     ] ;
 
     public function tickets ()

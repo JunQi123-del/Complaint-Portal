@@ -77,6 +77,7 @@ class RegisterController extends Controller
     protected function showRegistrationForm(){
         return view('dashboards.admins.register');
     }
+
     protected function Register(request $request){
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
@@ -95,4 +96,5 @@ class RegisterController extends Controller
         }
 
     }
+    
 }

@@ -18,10 +18,6 @@ class CreateCommentsTable extends Migration
             $table->timestamps();
             $table->text('comment');
             $table->string('attatchment');
-            $table->unsignedBigInteger('ticket_id');
-            $table->unsignedBigInteger('admin_id');
-            $table->foreign('ticket_id')->references('id')->on('tickets');
-            $table->foreign('admin_id')->references('id')->on('administrators');
         });
     }
 

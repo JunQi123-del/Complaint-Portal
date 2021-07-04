@@ -13,12 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', 'App\Http\Controllers\FormController@index');
-
+/*-----------------------------Welcome page---------------------------------------------*/
 Route::get('/', 'PageController@index');
 
 
-Route::get('/createTicket', 'TicketController@store');
+/*-----------------------------Ticket Form---------------------------------------------*/
+Route::get('/ticket/create/complaint', 'TicketController@createComplaint');
+Route::get('/ticket/create/remark', 'TicketController@createRemark');
+Route::get('/ticket/create/appeal', 'TicketController@createAppeal');
+Route::get('/ticket/create/feedback', 'TicketController@createFeedback');
+
+/*-----------------------------Show Ticket---------------------------------------------*/
+Route::get('/ticket/{id}', 'TicketController@show');
+
+/*-----------------------------CKEditor---------------------------------------------*/
+Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
+Route::post('/', 'TicketController@store');
+
 
 
 

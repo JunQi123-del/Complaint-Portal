@@ -3,7 +3,7 @@
 
     
 
-        <header id="header" class="fixed-top">
+    <header id="header" class="fixed-top">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,8 +16,18 @@
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/venobox.min.js') !!}"> </script>
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/owl.carousel.min.js') !!}"> </script>
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/isotope.pkgd.min.js') !!}"> </script>
+        <script type ="text/javascript"  src="{!! asset('js/ticket_validate.js') !!}"> </script>
         <script src="https://use.fontawesome.com/84ee66b848.js"></script>
-
+        
+        <div>
+            <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+            <script>
+            CKEDITOR.replace( 'summary-ckeditor', {
+                filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+            });
+            </script>
+        </div>
 
         <!-- Styles -->
          <link href="/css/app.css" rel="stylesheet"><!-- from bootstrap -->
@@ -28,10 +38,11 @@
          <link href="/css/welcomepage/venobox.min.css" rel="stylesheet">
          <link href="/css/welcomepage/owl.carousel.min.css" rel="stylesheet">
          <link href="/css/welcomepage/accordion.css" rel="stylesheet">
+         <link href="{{ asset('css/ticket.css') }}" rel="stylesheet"><!-- ticket view sidebar -->
+         
          
 
-
-        <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+         <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
         <div class="container d-flex">
         <div class="contact-info mr-auto">
             <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
@@ -46,6 +57,7 @@
         </div>
         </div>
         </div>
+
          
         <div class="container d-flex align-items-center">
 
@@ -62,16 +74,10 @@
 
     
     <body>
-    <div class="container">
+    <div>
+        @include('inc.message')
         @yield('content')
     </div>
-    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('wysiwyg-editor');
-    </script>
-    
-    
-    });
 
         <!-- ======= Footer ======= -->
         <footer id="footer">

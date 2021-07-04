@@ -1,0 +1,38 @@
+.ticket-view{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.ticket-view::after{
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.ticket-view .ticket-side{
+    width: 60%;
+    margin: 0 0 40px;
+    float: left;
+
+
+}
+
+.sticky-sidebar{
+    padding: 40px 40px 60px;
+    box-sizing: border-box;
+    border-radius: 2px;
+
+    position: fixed;
+    right: 10%;
+    width: 20%;
+    float:right;
+
+
+
+
+}
+
+
+
+
+

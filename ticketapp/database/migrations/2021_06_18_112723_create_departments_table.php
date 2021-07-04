@@ -16,8 +16,6 @@ class CreateDepartmentsTable extends Migration
         Schema::create('departments',function(Blueprint $table){
             $table->bigIncrements('id');    // department id
             $table->string('depart_name');
-            $table->unsignedBigInteger('admin_id');
-            $table->foreign('admin_id')->references('id')->on('administrators');
             });
     }
 
