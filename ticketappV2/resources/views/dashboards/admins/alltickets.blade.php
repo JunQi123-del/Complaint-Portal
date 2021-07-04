@@ -35,6 +35,7 @@
         <td>{{$row['school']}}</td>
         <td>{{$row['first_name']}}</td>
         <td>{{$row['last_name']}}</td>
+        <td>{{$row['email']}}</td>
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
     </tr>
