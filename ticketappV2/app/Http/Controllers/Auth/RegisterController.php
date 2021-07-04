@@ -31,6 +31,7 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
+    
 
     /**
      * Create a new controller instance.
@@ -63,18 +64,37 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'role' =>2,
-            'password' => Hash::make($data['password']),
+    // protected function create(array $data)
+    // {
+    //     return User::create([
+    //         'name' => $data['name'],
+    //         'email' => $data['email'],
+    //         'role' =>2,
+    //         'password' => Hash::make($data['password']),
+    //     ]);
+
+    // }
+    protected function showRegistrationForm(){
+        return view('dashboards.admins.register');
+    }
+
+    protected function Register(request $request){
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+        $user = new User();
+        $user->name =$request->name;
+        $user->email =$request->email;
+        $user->role = 2;
+        $user->password =\Hash::make($request->password);
+        if($user->save() ){
+            return redirect()->back()->with('success','User has been registered successfully');
+        }else{
+            return redirect()->back()->with('error','Failed to register');
+        }
+
     }
-    /*
-    protected function register(request $request){
-        return redirect()->route('register')->with('Success','Account has been created');
-    }
-    */
+    
 }

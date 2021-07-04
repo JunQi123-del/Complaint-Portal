@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','preventBackHis
     Route::get('resolved',[AdminController::class,'resolved'])->name('admin.resolved');
     Route::get('appeal',[AdminController::class,'appeal'])->name('admin.appeal');
     Route::get('remark',[AdminController::class,'remark'])->name('admin.remark');
+    Route::get('registerform',[AdminController::class,'showRegistrationForm'])->name('admin.registerform');
+    Route::post('register',[AdminController::class,'Register'])->name('admin.register');
 });
 
 Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','preventBackHistory']], function(){
