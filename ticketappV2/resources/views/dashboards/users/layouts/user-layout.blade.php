@@ -47,7 +47,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('admin.dashboard') }}" class="nav-link">Dashboard</a>
+        <a href="{{ route('user.allopen') }}" class="nav-link">All Open</a>
       </li>
     </ul>
 
@@ -277,7 +277,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{ route('admin.registerform') }}">@yield('register')</a></li>
+            <li class="breadcrumb-item"><a href="">@yield('register')</a></li>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
