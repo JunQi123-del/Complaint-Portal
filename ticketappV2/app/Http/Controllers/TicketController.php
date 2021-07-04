@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ticket;                 // able to use the ticket model inside this controller
+use DB;                         // database
 
 class TicketController extends Controller
 {
@@ -21,9 +23,43 @@ class TicketController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createComplaint()
     {
-        
+        $category = 'Complaint';
+        return view('ticket.create')->with('category', $category);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createRemark()
+    {
+        $category = 'Remark';
+        return view('ticket.create')->with('category', $category);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createAppeal()
+    {
+        $category = 'Appeal';
+        return view('ticket.create')->with('category', $category);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createFeedback()
+    {
+        $category = 'Feedback';
+        return view('ticket.create')->with('category', $category);
     }
 
     /**
@@ -34,9 +70,40 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
+        $ticket = new Ticket;
+
+        if($request->has('student'))
+        { 
+            $this->validate($request, [
+                'stu_id' => 'required',
+                'school' => 'required'
+            ]);
+            $ticket->user_background = $request->input('student');
+        }
+        else if($request->has('staff'))
+        {
+            $ticket->user_background = $request->input('staff');
+        }
+        else if($request->has('public'))
+        {
+            $ticket->user_background = $request->input('public');
+        }
+
+        $ticket->category = request('h_category');
+        $ticket->is_anonymous = request('isAnonymous');
+        $ticket->first_name = request('first');
+        $ticket->last_name = request('last');
+        $ticket->student_id = request('stu_id');
+        $ticket->school = request('school');
+        $ticket->email = request('email');
+        $ticket->title = request('title');
+        $ticket->message = request('body');
+        $ticket->status = 'To be reviewed';
+        //$ticket->attatchment = request('cover_image'); later then do
+
+        $ticket->save();
         
-        return view('ticket.create');
-  
+        return redirect('/')->with('success', 'Ticket Created');
     }
 
     /**
@@ -47,7 +114,12 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        $ticket = Ticket::find($id);
+        
+        return view('ticket.show')
+                ->with('ticket', $ticket);
+                //->with('persons', Person::order_by('list_order', 'ASC')->get())
+                //;
     }
 
     /**
