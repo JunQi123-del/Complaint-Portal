@@ -162,12 +162,12 @@
 <br>
 
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-            <script>
-            CKEDITOR.replace( 'summary-ckeditor', {
-                filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-                filebrowserUploadMethod: 'form'
-            });
-            </script>
+<script>
+    CKEDITOR.replace( 'summary-ckeditor', {
+        filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form'
+    });
+</script>
 
 <script type ="text/javascript">
 // handle is anonymous
