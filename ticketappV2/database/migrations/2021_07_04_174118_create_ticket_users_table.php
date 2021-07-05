@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInternalCommentsTable extends Migration
+class CreateTicketUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateInternalCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('internal_comments',function(Blueprint $table){
-            $table->bigIncrements('id');    // internal comment id
-            $table->timestamps();
-            $table->text('internal_comment');
-            $table->string('attatchment');
-    
+        Schema::create('ticket_users', function (Blueprint $table) {
+            $table->unsignedInteger('ticket_id');
+            $table->unsignedInteger('user_id');
 
         });
     }
@@ -30,6 +27,6 @@ class CreateInternalCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropifExists('internal_comments');
+        Schema::dropIfExists('ticket_users');
     }
 }
