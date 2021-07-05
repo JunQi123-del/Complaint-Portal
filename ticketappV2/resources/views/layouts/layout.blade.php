@@ -17,6 +17,13 @@
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/owl.carousel.min.js') !!}"> </script>
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/isotope.pkgd.min.js') !!}"> </script>
         <script src="https://use.fontawesome.com/84ee66b848.js"></script>
+        <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+        <script>
+            CKEDITOR.replace( 'summary-ckeditor', {
+                filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
+                filebrowserUploadMethod: 'form'
+            });
+        </script>
 
 
         <!-- Styles -->
@@ -28,7 +35,7 @@
          <link href="/css/welcomepage/venobox.min.css" rel="stylesheet">
          <link href="/css/welcomepage/owl.carousel.min.css" rel="stylesheet">
          <link href="/css/welcomepage/accordion.css" rel="stylesheet"> 
-         
+         <link href="{{ asset('css/ticket.css') }}" rel="stylesheet"><!-- ticket view sidebar -->        
 
 
         <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
@@ -62,7 +69,10 @@
 
     
     <body>  
+    <div>
+        @include('inc.message')
         @yield('content')
+    </div>
 
   
     
