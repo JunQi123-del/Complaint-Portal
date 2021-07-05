@@ -10,6 +10,7 @@ class Comment extends Model
     protected $fillable = [
         'id',    // comment id
         'comment',
+        'is_internal',
         'attatchment'
     ] ;
 
@@ -20,6 +21,6 @@ class Comment extends Model
 
     public function administrator ()
     {
-        return $this->belongsTo(Administrator::class);
+        return $this->belongsTo(User::class);
     }
 }
