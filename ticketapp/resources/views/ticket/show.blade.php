@@ -20,12 +20,10 @@
                 <div container style="border:3px solid #cecece;">
                     <h3>Comment</h3>
                     <a onClick="$('#form1').hide();">Hide</a>
-<a onClick="$('#form1').show();">Show</a>
-<form action="sample_posteddata.php" method="post" id="form1">
-    <textarea id="editor1" name="editor1">blabla</textarea>
-    <script type="text/javascript"> CKEDITOR.replace( 'editor1' ); </script>
-    <input type="submit" value="Submit" />
-</form>
+                    <a onClick="$('#form1').show();">Show</a>
+                    <form action="sample_posteddata.php" method="post" id="form1">
+                        <textarea id="summary-ckeditor" name="summary-ckeditor"></textarea>
+                    </form>
 
                 </div>
             </div>
@@ -50,8 +48,9 @@
         </div>
     </div>    
 
-
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
+
 <script>
     CKEDITOR.replace( 'summary-ckeditor', {
     filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
