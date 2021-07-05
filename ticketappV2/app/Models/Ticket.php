@@ -12,7 +12,7 @@ class Ticket extends Model
         'title',
         'message',
         'status',
-        'is_nonymous',
+        'is_anonymous',
         'category',
         'user_background',
         'student_id',
@@ -23,24 +23,14 @@ class Ticket extends Model
         'attatchment'
     ] ;
 
-    public function administrator ()
-    {
-        return $this->belongsTo(Administrator::class);
-    }
-
-    public function departmentAccount ()
-    {
-        return $this->belongsTo(DepartmentAccount::class);
-    }
-    
     public function comments ()
     {
         return $this->hasMany(Comment::class);
     }
 
-    public function internalComments ()
+    public function users ()
     {
-        return $this->hasMany(InternalComment::class);
+        return $this->hasMany(User::class);
     }
 }
 
