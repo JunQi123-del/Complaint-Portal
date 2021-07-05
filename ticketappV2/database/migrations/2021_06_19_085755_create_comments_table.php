@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->text('comment');
             $table->boolean('is_internal');
             $table->string('attatchment');
+            $table->unsignedInteger('ticket_id');
         });
     }
 
