@@ -65,7 +65,7 @@ class AdminController extends Controller
     }
 
     function nonanonymous(){
-        $Nanonymous = Ticket::where('is_anonymous','2')->get();
+        $Nanonymous = Ticket::where('is_anonymous','0')->get();
         return view('dashboards.admins.non-anonymous',compact('Nanonymous'));
     }
     function anonymous (){
