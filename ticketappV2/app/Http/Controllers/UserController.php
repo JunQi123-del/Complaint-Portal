@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     function allopen (){
-        $allTickets = Ticket::all();
-        return view('dashboards.users.allopen',compact('allTickets'));
+        
+        $dept = user::find(Auth::user()->id)->tickets;
+        return view('dashboards.users.allopen',compact('dept'));
     }
 
     function anonymous(){
