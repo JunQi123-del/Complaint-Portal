@@ -1,6 +1,6 @@
-@extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','Remark')
-@section('header','remark')
+@extends('dashboards.users.layouts.user-layout')
+@section('title','request for remark')
+@section('header','Request for remark')
 
 @section('contents')
 
@@ -20,11 +20,11 @@
       <th scope="col">Email</th>
       <th scope="col">created at</th>
       <th scope="col">updated at</th>
-      <th scope="col">DepartmentID</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($remark as $row)
+    @foreach($dept as $row)
+    @if($row->category == 'Remark')
     <tr>
         <td>{{$row['id']}}</td>
         <td>{{$row['title']}}</td>
@@ -39,13 +39,12 @@
         <td>{{$row['email']}}</td>
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
-        <td>{{$row['user_id']}}</td>
     </tr>
+    @endif
 
     @endforeach
   </tbody>
 </table>
-
 
 
 @endsection

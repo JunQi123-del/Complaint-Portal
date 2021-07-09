@@ -47,7 +47,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ route('user.allopen') }}" class="nav-link">All Open</a>
+        <a href="{{ route('user.allopen') }}" class="nav-link">All Tickets</a>
       </li>
     </ul>
 
@@ -161,26 +161,11 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="{{ route('admin.dashboard') }}" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.allaccounts') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                AllAccounts
-              </p>
-            </a>
-          </li>
+  
           
           <li class="nav-header">Tickets Received</li>
           <li class="nav-item">
-            <a href="{{ route('admin.alltickets') }}" class="nav-link">
+            <a href="{{ route('user.allopen') }}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 All Tickets
@@ -189,7 +174,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.anonymous') }}" class="nav-link">
+            <a href="{{ route('user.anonymous') }}" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Anonymous
@@ -197,21 +182,21 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.non-anonymous') }}" class="nav-link">
+            <a href="{{ route('user.nanonymous') }}" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Non-Anonymous
               </p>
             </a>
             <li class="nav-item">
-            <a href="{{ route('admin.complaint') }}" class="nav-link">
+            <a href="{{ route('user.complaint') }}" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Complaint
               </p>
             </a>
             <li class="nav-item">
-            <a href="{{ route('admin.feedback') }}" class="nav-link">
+            <a href="{{ route('user.feedback') }}" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Feedback
@@ -219,14 +204,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.appeal') }}" class="nav-link">
+            <a href="{{ route('user.appeal') }}" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Appeal
               </p>
             </a>
             <li class="nav-item">
-            <a href="{{ route('admin.remark') }}" class="nav-link">
+            <a href="{{ route('user.remark') }}" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>
               <p>
                 Remark
@@ -235,7 +220,7 @@
           </li>
           <li class="nav-header">Status</li>
           <li class="nav-item">
-            <a href="{{ route('admin.resolved') }}" class="nav-link">
+            <a href="{{ route('user.resolved') }}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                resolved
@@ -244,18 +229,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.investigating') }}" class="nav-link">
+            <a href="{{ route('user.investigating') }}" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Investigating
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.review') }}" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                To Be Reviewed
               </p>
             </a>
           </li>

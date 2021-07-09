@@ -1,6 +1,6 @@
 @extends('dashboards.users.layouts.user-layout')
-@section('title','All Open')
-@section('header','All Open')
+@section('title','All Tickets')
+@section('header','All Tickets')
 
 @section('contents')
 <table id = "example1" class="table table-striped">
@@ -22,9 +22,8 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($allTickets as $row)
+    @foreach($dept as $row)
     <tr>
-        
         <td>{{$row['id']}}</td>
         <td>{{$row['title']}}</td>
         <td>{{$row['status']}}</td>
@@ -35,6 +34,7 @@
         <td>{{$row['school']}}</td>
         <td>{{$row['first_name']}}</td>
         <td>{{$row['last_name']}}</td>
+        <td>{{$row['Email']}}</td>
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
     </tr>
