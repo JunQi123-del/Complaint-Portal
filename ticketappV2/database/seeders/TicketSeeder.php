@@ -21,7 +21,7 @@ class TicketSeeder extends Seeder
             'is_anonymous' => '1',
             'category' => Str::random(10),
             'user_background' => Str::random(10),
-            'user_id'=>'2'
+            'user_id'=>'4'
         ]);
         
     }

@@ -20,6 +20,7 @@
       <th scope="col">Email</th>
       <th scope="col">created at</th>
       <th scope="col">updated at</th>
+      <th scope="col">DepartmentID</th>
     </tr>
   </thead>
   <tbody>
@@ -35,8 +36,10 @@
         <td>{{$row['school']}}</td>
         <td>{{$row['first_name']}}</td>
         <td>{{$row['last_name']}}</td>
+        <td>{{$row['email']}}</td>
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
+        <td>{{$row['user_id']}}</td>
     </tr>
     @endforeach
   </tbody>

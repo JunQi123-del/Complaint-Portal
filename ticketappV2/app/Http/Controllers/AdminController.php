@@ -95,7 +95,7 @@ class AdminController extends Controller
     }
 
     function review(){
-        $review = Ticket::where('category','To Be Reviewed')->get();
+        $review = Ticket::where('status','To Be Reviewed')->get();
         return view('dashboards.admins.review',compact('review'));
     }
 }

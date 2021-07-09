@@ -1,4 +1,4 @@
-@extends('dashboards.admins.layouts.admin-dash-layout')
+@extends('dashboards.users.layouts.user-layout')
 @section('title','Feedback Tickets')
 @section('header','Feedback Tickets')
 
@@ -23,7 +23,8 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($allTickets as $row)
+    @foreach($dept as $row)
+    @if($row->category == 'Feedback')
     <tr>
         <td>{{$row['id']}}</td>
         <td>{{$row['title']}}</td>
@@ -39,6 +40,7 @@
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
     </tr>
+    @endif
 
     @endforeach
   </tbody>
