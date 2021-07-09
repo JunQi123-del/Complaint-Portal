@@ -1,6 +1,6 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','Non anonymous')
-@section('header','Non-Anonymous tickets')
+@section('title','Appeal Tickets')
+@section('header','Appeal Tickets')
 
 @section('contents')
 

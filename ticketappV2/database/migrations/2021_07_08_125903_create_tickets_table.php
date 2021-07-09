@@ -28,8 +28,8 @@ class CreateTicketsTable extends Migration
             $table->string('email')->nullable();
             $table->string('attatchment')->nullable();
             $table->timestamps();
-            $table->BigInteger('dept_id')->unsigned();
-            $table->foreign('dept_id')->nullable()->references('id')->on('users');
+            $table->BigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->nullable()->references('id')->on('users');
              });
     }
 

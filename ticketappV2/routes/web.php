@@ -57,6 +57,12 @@ Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','preventBackHisto
     Route::get('allopen',[UserController::class,'allopen'])->name('user.allopen');
     Route::get('anonymous',[UserController::class,'anonymous'])->name('user.anonymous');
     Route::get('nanonymous',[UserController::class,'nanonymous'])->name('user.nanonymous');
+    Route::get('complaint',[UserController::class,'complaint'])->name('user.complaint');
+    Route::get('feedback',[UserController::class,'feedback'])->name('user.feedback');
+    Route::get('appeal',[UserController::class,'appeal'])->name('user.appeal');
+    Route::get('remark',[UserController::class,'remark'])->name('user.remark');
+    Route::get('resolved',[UserController::class,'resolved'])->name('user.resolved');
+    Route::get('investigating',[UserController::class,'investigating'])->name('user.investigating');
 });
 
 /*-----------------------------Ticket Form---------------------------------------------*/
