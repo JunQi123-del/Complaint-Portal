@@ -14,63 +14,50 @@
     ])!!}
         @CSRF
         <input type="hidden" value="{{$category}}" name="h_category">
-        <input type="hidden" value="1" name="isAnonymous">
+        <input type="hidden" value="0" name="isAnonymous">
         <!-- 1 represent true in database --> 
-        
-        <!--Comment out 
-        <div class="form-group">
-            <b>{{Form::label('isAnonymous', 'Do you want us to know who you are?')}}</b>
-            <div class="btn btn-group float-right">
-                {{Form::button('Yes', [
-                    'id'        => 'notAno',
-                    'class'     => 'btn btn-success', 
-                    'onclick'   => 'notAnonymous();'
-                ])}}
-                {{Form::reset('No', [
-                    'id'        => 'isAno', 
-                    'class'     => 'btn btn-danger',  
-                    'onclick'   => 'isAnonymous();'
-                ])}}
-            </div>
-        </div>
-        <br>-->
+
         <div class="form-group ">
-            <b><p>Who are you? (by default: you are a student)</p></b>
+            <b><p style ="font-size: 20px;">Who are you? (by default: you are a student)</p></b>
             <div class="form-check form-check-inline float-right">
                 <input type="checkbox" id="id_staff"  name="staff" value="Staff" onclick="selectStaff()">
-                <label class="form-check-label" for="id_staff">Staff </label>
+                <label class="form-check-label" for="id_staff" style ="font-size: 20px;">Staff </label>
             </div>
             <div class="form-check form-check-inline float-right">
                 <input type="checkbox" id="id_student" name="student" value="Student" checked onclick="selectStudent()">
-                <label class="form-check-label" for="id_student">Student </label>
+                <label class="form-check-label" for="id_student" style ="font-size: 20px;">Student </label>
             </div>
             <div class="form-check form-check-inline float-right">
                 <input type="checkbox" id="id_public" name="public" value="Public User" onclick="selectPublic()">
-                <label class="form-check-label" for="id_punlic">Public User </label>
+                <label class="form-check-label" for="id_punlic" style ="font-size: 20px;">Public User </label>
             </div>
         </div>
         <br><br>
 
         <div class="form-group row">
             <div class="col">
-                {{Form::label('first', 'First Name')}}
+                <div style ="font-weight: bold; font-size: 20px;">
+                    {{Form::label('first', 'First Name')}}
+                </div>
                 {{Form::text('first', '', [
                     'id'                            => 'id_first', 
                     'class'                         => 'form-control', 
                     'required'                      => 'required',
                     'data-parsley-required-message' => 'First name is required',
-                    'data-parsley-pattern'          => '[a-zA-Z]+$', 
+                    'data-parsley-pattern'          => '[a-zA-Z\s]+$', 
                     'data-parsley-trigger'          => 'keyup'
                 ])}}
             </div>
             <div class="col">
-                {{Form::label('last', 'Last Name')}}
+                <div style ="font-weight: bold; font-size: 20px;">
+                    {{Form::label('last', 'Last Name')}}
+                </div>
                 {{Form::text('last', '', [
                     'id'                            => 'id_last', 
                     'class'                         => 'form-control', 
                     'required'                      => 'required',
                     'data-parsley-required-message' => 'Last name is required',
-                    'data-parsley-pattern'          => '[a-zA-Z]+$', 
+                    'data-parsley-pattern'          => '[a-zA-Z\s]+$', 
                     'data-parsley-trigger'          => 'keyup'
                 ])}}
             </div>
@@ -79,7 +66,9 @@
 
         <div class="form-group row">
             <div class="col">
-                {{Form::label('stu_id', 'Student ID')}}
+                <div style ="font-weight: bold; font-size: 20px;">
+                    {{Form::label('stu_id', 'Student ID')}}
+                </div>
                 {{Form::text('stu_id', '', [
                     'id'                            => 'id_stuID', 
                     'class'                         => 'form-control', 
@@ -92,11 +81,13 @@
                 </div>
             </div>
             <div class="col">
-                {{Form::label('school', 'School')}}
+                <div style ="font-weight: bold; font-size: 20px;">
+                    {{Form::label('school', 'School')}}
+                </div>
                 {{Form::text('school', '', [
                     'id'                            => 'id_school', 
                     'class'                         => 'form-control', 
-                    'data-parsley-pattern'          => '[a-zA-Z]+$', 
+                    'data-parsley-pattern'          => '[a-zA-Z\s]+$', 
                     'data-parsley-trigger'          => 'keyup'
                 ])}}
                 <div class="float-right">
@@ -107,7 +98,9 @@
         <br>
 
         <div class="form-group">
-            {{Form::label('email', 'Way of contact (in email)')}}
+            <div style ="font-weight: bold; font-size: 20px;">
+                {{Form::label('email', 'Way of contact (in email)')}}
+            </div>
             {!!Form::email('email', '', [
                 'id'                            => 'id_email', 
                 'class'                         => 'form-control', 
@@ -120,7 +113,9 @@
         <br>
 
         <div class="form-group">
-            {{Form::label('title', 'Title')}}
+            <div style ="font-weight: bold; font-size: 20px;">
+                {{Form::label('title', 'Title')}}
+            </div>
             <p>Please enter the title of your concern</p>
             {{Form::text('title', '', [
                 'id'                            => 'id_title', 
@@ -133,7 +128,9 @@
         <br>
 
         <div class="form-group">
-            {{Form::label('body', 'Description')}}
+            <div style ="font-weight: bold; font-size: 20px;">
+                {{Form::label('body', 'Description')}}
+            </div>
             <p>Please detail below the nature of your incidents or events.<span>(be as specific as possible)</span></p>
             {{Form::textarea('body', '', [
                 'id'                            => 'summary-ckeditor', 
@@ -145,11 +142,17 @@
         </div>
 
         <div class="form-group">
-            {{Form::label('attachment', 'File Attachment (Optional)')}}
+            <div style ="font-weight: bold; font-size: 20px;">
+                {{Form::label('attachment', 'File Attachment (Optional)')}}
+            </div>    
             <p>You are able to provide further documents for more information.</p>
             <strong>Please Upload multiple files in form of one compressed zip file if needed.</strong><br>
             {{Form::file('cover_image')}}
         </div>
+        
+        <a href= "/ticket/create/complaint">
+            {{Form::button('Return Home Page', ['class'=>'btn btn-primary'])}}
+        </a>
 
         <div class="float-right">
             {{Form::reset('Clear Form', ['class'=>'btn btn-primary'])}}
@@ -172,25 +175,6 @@
 <script type ="text/javascript">
 // handle is anonymous
 document.getElementById('notAnonymous').click();
-
-function isAnonymous()
-{
-    document.getElementById("id_first").disabled = true;
-    document.getElementById("id_last").disabled = true;
-    document.getElementById("id_stuID").disabled = true;
-    document.getElementById("id_school").disabled = true;
-    document.getElementById("id_email").disabled = true;
-}
-
-// handle isNot anonymous
-function notAnonymous()
-{
-    document.getElementById("id_first").disabled = false;
-    document.getElementById("id_last").disabled = false;
-    document.getElementById("id_stuID").disabled = false;
-    document.getElementById("id_school").disabled = false;
-    document.getElementById("id_email").disabled = false;
-}
 
 // handle user background - staff selection
 function selectStaff()
