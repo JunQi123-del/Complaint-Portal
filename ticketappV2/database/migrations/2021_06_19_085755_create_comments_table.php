@@ -18,8 +18,9 @@ class CreateCommentsTable extends Migration
             $table->timestamps();
             $table->text('comment');
             $table->boolean('is_internal');
-            $table->string('attatchment');
-            $table->unsignedInteger('ticket_id');
+            $table->string('attatchment')->nullable();
+            $table->unsignedInteger('ticket_id')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
         });
     }
 
