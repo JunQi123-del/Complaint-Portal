@@ -27,8 +27,9 @@
                                 {{$ticket->comment->created_at}}
                                 {!!$ticket->comment->comment!!}
                             @endforeach
-                        @endif
+                       
                     </div>
+                    @endif
                     
                     <hr>
                     @include('comment.create')
@@ -44,7 +45,7 @@
                     </button>
                 </a>
             
-            
+
         </div>
 
         <div class="sidebar"></div>
