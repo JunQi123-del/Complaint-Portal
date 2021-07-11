@@ -39,8 +39,9 @@ class AdminController extends Controller
 
     function triage(request $request)
     {
-        
+
     }
+
 
     function show($id)
     {
