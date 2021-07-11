@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-       /* \DB::table('users')->insert([
+        \DB::table('users')->insert([
             'name' => 'AdminTest',
             'email' => 'Admin@test2.com',
             'role' => '1',
@@ -26,13 +26,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'Dept@test2.com',
             'role' => '2',
             'password' => \Hash::make('Magatron1'),
-        ]);*/
+        ]);
 
-        \DB::table('users')->insert([
+        /*\DB::table('users')->insert([
             'name' => 'Depttest',
             'email' => 'Dept@test3.com',
             'role' => '2',
             'password' => \Hash::make('Magatron1'),
-        ]);
+        ]);*/
     }
 }
