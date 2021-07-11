@@ -11,7 +11,10 @@ class Comment extends Model
         'id',    // comment id
         'comment',
         'is_internal',
-        'attatchment'
+        'attatchment',
+        'ticket_id',
+        'user_id'
+
     ] ;
 
     public function ticket ()
