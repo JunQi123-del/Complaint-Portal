@@ -14,23 +14,40 @@
                 </div>
             </div>
 
-            <div class="container">
+            
                 <br><br>
                 <hr>
-                <div container style="border:3px solid #cecece;">
+                <div>
                     <h3>Comment</h3>
-                    <a onClick="$('#form1').hide();">Hide</a>
-                    <a onClick="$('#form1').show();">Show</a>
-                    <form action="sample_posteddata.php" method="post" id="form1">
-                        <textarea id="summary-ckeditor" name="summary-ckeditor"></textarea>
-                    </form>
+                    @if ($ticket->comments->isEmpty())
+                        <p>There are currently no comment.</p>
+                    @else
+                    <div class="container">
+                        @foreach($ticket->comments as $ticket->comment)
+                                {{$ticket->comment->created_at}}
+                                {!!$ticket->comment->comment!!}
+                            @endforeach
+                        @endif
+                    </div>
+                    
+                    <hr>
+                    @include('comment.create')
+                   
+                    
 
                 </div>
-            </div>
+
+                <br>
+                <a href= "/ticket/create/complaint">
+                    <button class="btn btn-primary">
+                        Return Home Page
+                    </button>
+                </a>
+            
             
         </div>
 
-        
+        <div class="sidebar"></div>
         <div class="sticky-sidebar">
             <div class="container">
                 <p class="h6">Created on <br>{{$ticket->created_at}}</p> 
@@ -46,17 +63,7 @@
                 <p class="h6">Triage to <br>{{'To be assigned'}}</p>
             </div>
         </div>
-    </div>    
-
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-
-
-<script>
-    CKEDITOR.replace( 'summary-ckeditor', {
-    filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-    filebrowserUploadMethod: 'form'
-    });
-</script>
+    </div>
 
 @endsection
 
