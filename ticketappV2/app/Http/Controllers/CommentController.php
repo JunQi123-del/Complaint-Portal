@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;                 // able to use the comment model inside this controller
+use DB;
+use App\Notifications\CommentNotification;
+use Illuminate\Support\Facades\Notification; 
 
 class CommentController extends Controller
 {
@@ -34,7 +38,16 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = new Comment;
+
+        $comment->comment = $request->comment;
+        $comment->is_internal = $request->internal;
+        $comment->ticket_id = $request->ticket_id;
+        // $comment->user_id = 
+
+        $comment->save();
+
+        return redirect('/ticket/'.$comment->ticket_id)->with('toast_success', 'Comment Added Successfully!');;
     }
 
     /**
