@@ -73,7 +73,7 @@
                     'id'                            => 'id_stuID', 
                     'class'                         => 'form-control', 
                     'data-parsley-type'             => 'digits', 
-                    'data-parsley-length'           => '[8,8]', 
+                    'data-parsley-length'           => '[6,6]', 
                     'data-parsley-trigger'          => 'keyup'
                 ])}}
                 <div class="float-right">
