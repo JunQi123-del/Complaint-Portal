@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <b><h1>{{$category}} Form</h1></b>
+    <b><h1>Anonymous {{$category}} Form</h1></b>
     <hr>
     <div>
     {!! Form::open([
@@ -14,103 +14,25 @@
     ])!!}
         @CSRF
         <input type="hidden" value="{{$category}}" name="h_category">
-        <input type="hidden" value="0" name="isAnonymous">
+        <input type="hidden" value="1" name="isAnonymous">
         <!-- 1 represent true in database --> 
-
+        
         <div class="form-group ">
-            <b><p style ="font-size: 20px;">Who are you? (by default: you are a student)</p></b>
+            <b><p style ="font-weight: bold; font-size: 20px;">Who are you? (by default: you are a student)</p></b>
             <div class="form-check form-check-inline float-right">
                 <input type="checkbox" id="id_staff"  name="staff" value="Staff" onclick="selectStaff()">
-                <label class="form-check-label" for="id_staff" style ="font-size: 20px;">Staff </label>
+                <label class="form-check-label" for="id_staff" style ="font-size: 20px;"> Staff </label>
             </div>
             <div class="form-check form-check-inline float-right">
                 <input type="checkbox" id="id_student" name="student" value="Student" checked onclick="selectStudent()">
-                <label class="form-check-label" for="id_student" style ="font-size: 20px;">Student </label>
+                <label class="form-check-label" for="id_student" style ="font-size: 20px;"> Student </label>
             </div>
             <div class="form-check form-check-inline float-right">
                 <input type="checkbox" id="id_public" name="public" value="Public User" onclick="selectPublic()">
-                <label class="form-check-label" for="id_punlic" style ="font-size: 20px;">Public User </label>
+                <label class="form-check-label" for="id_punlic" style ="font-size: 20px;"> Public User </label>
             </div>
         </div>
         <br><br>
-
-        <div class="form-group row">
-            <div class="col">
-                <div style ="font-weight: bold; font-size: 20px;">
-                    {{Form::label('first', 'First Name')}}
-                </div>
-                {{Form::text('first', '', [
-                    'id'                            => 'id_first', 
-                    'class'                         => 'form-control', 
-                    'required'                      => 'required',
-                    'data-parsley-required-message' => 'First name is required',
-                    'data-parsley-pattern'          => '[a-zA-Z\s]+$', 
-                    'data-parsley-trigger'          => 'keyup'
-                ])}}
-            </div>
-            <div class="col">
-                <div style ="font-weight: bold; font-size: 20px;">
-                    {{Form::label('last', 'Last Name')}}
-                </div>
-                {{Form::text('last', '', [
-                    'id'                            => 'id_last', 
-                    'class'                         => 'form-control', 
-                    'required'                      => 'required',
-                    'data-parsley-required-message' => 'Last name is required',
-                    'data-parsley-pattern'          => '[a-zA-Z\s]+$', 
-                    'data-parsley-trigger'          => 'keyup'
-                ])}}
-            </div>
-        </div>
-        <br>
-
-        <div class="form-group row">
-            <div class="col">
-                <div style ="font-weight: bold; font-size: 20px;">
-                    {{Form::label('stu_id', 'Student ID')}}
-                </div>
-                {{Form::text('stu_id', '', [
-                    'id'                            => 'id_stuID', 
-                    'class'                         => 'form-control', 
-                    'data-parsley-type'             => 'digits', 
-                    'data-parsley-length'           => '[8,8]', 
-                    'data-parsley-trigger'          => 'keyup'
-                ])}}
-                <div class="float-right">
-                    <small>* if you are a student</small>
-                </div>
-            </div>
-            <div class="col">
-                <div style ="font-weight: bold; font-size: 20px;">
-                    {{Form::label('school', 'School')}}
-                </div>
-                {{Form::text('school', '', [
-                    'id'                            => 'id_school', 
-                    'class'                         => 'form-control', 
-                    'data-parsley-pattern'          => '[a-zA-Z\s]+$', 
-                    'data-parsley-trigger'          => 'keyup'
-                ])}}
-                <div class="float-right">
-                    <small>* if you are a student</small>
-                </div>
-            </div>
-        </div>
-        <br>
-
-        <div class="form-group">
-            <div style ="font-weight: bold; font-size: 20px;">
-                {{Form::label('email', 'Way of contact (in email)')}}
-            </div>
-            {!!Form::email('email', '', [
-                'id'                            => 'id_email', 
-                'class'                         => 'form-control', 
-                'required'                      => 'required',
-                'data-parsley-required-message' => 'Email is required', 
-                'data-parsley-type'             => 'email', 
-                'data-parsley-trigger'          => 'keyup'
-            ])!!}
-        </div>
-        <br>
 
         <div class="form-group">
             <div style ="font-weight: bold; font-size: 20px;">
@@ -149,11 +71,11 @@
             <strong>Please Upload multiple files in form of one compressed zip file if needed.</strong><br>
             {{Form::file('cover_image')}}
         </div>
-        
+
         <a href= "/ticket/create/complaint">
             {{Form::button('Return Home Page', ['class'=>'btn btn-primary'])}}
         </a>
-
+        
         <div class="float-right">
             {{Form::reset('Clear Form', ['class'=>'btn btn-primary'])}}
             {{Form::submit('Submit', ['class'=>'btn btn-primary','id' => 'submitBtn'])}}

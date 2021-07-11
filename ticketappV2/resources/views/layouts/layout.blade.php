@@ -18,12 +18,6 @@
         <script type ="text/javascript"  src="{!! asset('js/wecomepage/isotope.pkgd.min.js') !!}"> </script>
         <script src="https://use.fontawesome.com/84ee66b848.js"></script>
         <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-        <script>
-            CKEDITOR.replace( 'summary-ckeditor', {
-                filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
-                filebrowserUploadMethod: 'form'
-            });
-        </script>
 
 
         <!-- Styles -->
@@ -58,7 +52,7 @@
 
         <!--<h1 class="logo mr-auto"><a href="{{url('/')}}">Green</a></h1>-->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="{{url('/')}}" class="logo mr-auto"><img src="/image/wrait.Jpg" alt="Logo" class="img-fluid" ></a>
+        <a href="{{url('/')}}" class="logo mr-auto"><img src="/image/mur.JPG" alt="Logo" class="img-fluid" ></a>
 
         
 
@@ -70,7 +64,13 @@
     
     <body>  
     <div>
-        @include('inc.message')
+        <!-- ======= Breaking line ======= -->
+        <br><br><br><br><br><br>
+
+        <!-- ======= Pop out alert/notification ======= -->
+        @include('sweetalert::alert')
+
+        <!-- ======= View content ======= -->
         @yield('content')
     </div>
 
@@ -80,7 +80,7 @@
         <!-- ======= Footer ======= -->
         <footer id="footer">
             <div class="container">
-            <h3>Green</h3>
+            <h3>Complaint Portal</h3>
             <div class="social-links">
                 <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>

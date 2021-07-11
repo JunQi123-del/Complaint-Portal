@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ticket;                 // able to use the ticket model inside this controller
 use DB;                         // database
+use App\Notifications\TicketLodge;
+use Illuminate\Support\Facades\Notification;
 
 class TicketController extends Controller
 {
@@ -102,7 +104,9 @@ class TicketController extends Controller
         //$ticket->attatchment = request('cover_image'); later then do
 
         $ticket->save();
-        
+
+        Notification::route('mail', $ticket->email)->notify(new TicketLodge());
+
         return redirect('/')->with('success', 'Ticket Created');
     }
 
