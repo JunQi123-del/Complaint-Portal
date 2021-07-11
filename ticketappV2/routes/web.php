@@ -61,13 +61,24 @@ Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','preventBackHisto
 
 /*-----------------------------Ticket Form---------------------------------------------*/
 Route::get('/ticket/create/complaint', 'TicketController@createComplaint');
+Route::get('/ticket/create/complaint/anonymous', 'TicketController@createAnonymousComplaint');
 Route::get('/ticket/create/remark', 'TicketController@createRemark');
 Route::get('/ticket/create/appeal', 'TicketController@createAppeal');
 Route::get('/ticket/create/feedback', 'TicketController@createFeedback');
+Route::get('/ticket/create/feedback/anonymous', 'TicketController@createAnonymousFeedback');
+
+/*-----------------------------Submit Ticket---------------------------------------------*/
+Route::post('new-ticket', 'TicketController@store');
+
 
 /*-----------------------------Show Ticket---------------------------------------------*/
 Route::get('/ticket/{id}', 'TicketController@show');
 
+/*-----------------------------Show Ticket---------------------------------------------*/
+Route::post('/search-ticket', 'TicketController@search');
+
+/*-----------------------------Add Comment---------------------------------------------*/
+Route::post('add-comment', 'CommentController@store');
+
 /*-----------------------------CKEditor---------------------------------------------*/
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
-Route::post('/', 'TicketController@store');
