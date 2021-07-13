@@ -21,6 +21,7 @@
       <th scope="col">created at</th>
       <th scope="col">updated at</th>
       <th scope="col">DepartmentID</th>
+      <th scope="col">Triage</th>
     </tr>
   </thead>
   <tbody>
@@ -40,8 +41,42 @@
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
         <td>{{$row['user_id']}}</td>
-    </tr>
+        <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">Triage</button> </td>
 
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal-{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-{{$row->id}}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel-{{$row->id}}">Ticket ID {{$row['id']}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Message
+        <br>
+        {{$row['message']}}
+        <br>
+      </div>
+      <form action = "admin/triage/{{$row->id}}" method = "POST">
+        @csrf
+        Triage to:
+        <select class = "form-control" name="department">
+          @foreach($allAccounts as $dept)
+        <option value ="{{$dept->id}}" >{{$dept->name}} - {{$dept->id}}</option>
+          @endforeach
+       </select>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+    </tr>
     @endforeach
   </tbody>
 </table>

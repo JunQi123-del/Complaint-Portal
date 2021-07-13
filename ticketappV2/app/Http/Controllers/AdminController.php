@@ -37,21 +37,28 @@ class AdminController extends Controller
 
     }
 
-    function triage(request $request)
+    
+
+    function triage($id,Request $request)
     {
-
-    }
-
-
-    function show($id)
-    {
-        return view('dashboards.admins.viewticket',['id'=>$id]);
+        $ticketdata = Ticket::find($id);
+        $ticketdata->user_id = $request->department;
+        $ticketdata->status = 'Investigating';
+        if($ticketdata->save())
+        {
+            return redirect()->back()->with('Success','Ticket triaged successfully');
+        }
+        else
+        {
+            return redirect()->back()->with('Error','Ticket not triaged successfully');
+        }
     }
 
 
     function alltickets(){
         $allTickets = Ticket::all();
-        return view('dashboards.admins.alltickets',compact('allTickets'));
+        $allAccounts = user::all();
+        return view('dashboards.admins.alltickets',compact('allTickets','allAccounts'));
     }
 
     function allaccount(){
