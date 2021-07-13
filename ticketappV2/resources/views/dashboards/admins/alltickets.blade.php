@@ -22,6 +22,7 @@
       <th scope="col">updated at</th>
       <th scope="col">DepartmentID</th>
       <th scope="col">Triage</th>
+      <th scope="col">Resolve</th>
     </tr>
   </thead>
   <tbody>
@@ -41,9 +42,15 @@
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
         <td>{{$row['user_id']}}</td>
-        <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">Triage</button> </td>
-
-        <!-- Modal -->
+        @if($row->status !='Resolved')
+        <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">Triage</button> </td> 
+        <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal2-{{$row->id}}">Resolve</button> </td> 
+        @else
+        <td> Resolved </td>
+        <td> Resolved </td>
+        @endif
+       
+        <!-- Triage Modal -->
 <div class="modal fade" id="exampleModal-{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-{{$row->id}}" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -54,11 +61,14 @@
         </button>
       </div>
       <div class="modal-body">
-        Message
-        <br>
-        {{$row['message']}}
-        <br>
-      </div>
+      Title: {{$row['title']}}
+      <br>
+      <br>
+      Message
+      <br>
+      {{$row['message']}}
+      <br>
+      </div> 
       <form action = "admin/triage/{{$row->id}}" method = "POST">
         @csrf
         Triage to:
@@ -75,6 +85,35 @@
     </div>
   </div>
 </div>
+<!-- End triage modal -->
+
+ <!-- resolve Modal -->
+ <div class="modal fade" id="exampleModal2-{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-{{$row->id}}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel-{{$row->id}}">Ticket ID {{$row['id']}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Message
+        <br>
+        Are you sure you want to resolve Ticket ID: {{$row['id']}}?
+        <br>
+      </div>
+      <form action = "admin/resolve/{{$row->id}}" method = "POST">
+        @csrf
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Dismiss</button>
+        <button type="submit" class="btn btn-primary">Yes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
 
     </tr>
     @endforeach

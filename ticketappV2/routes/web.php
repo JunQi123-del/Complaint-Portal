@@ -50,6 +50,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','preventBackHis
     Route::get('registerform',[AdminController::class,'showRegistrationForm'])->name('admin.registerform');
     Route::get('review',[AdminController::class,'review'])->name('admin.review');
     Route::post('triage/{id}',[AdminController::class,'triage'])->name('admin.triage');
+    Route::post('resolve/{id}',[AdminController::class,'resolveticket'])->name('admin.resolveticket');
     Route::post('register',[AdminController::class,'Register'])->name('admin.register');
 });
 
