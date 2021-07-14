@@ -69,6 +69,10 @@ class AdminController extends Controller
         }
     }
 
+    protected function emailpage(){
+        return view ('dashboards.admins.sendemail');
+    }
+
 
     function alltickets(){
         $allTickets = Ticket::all();

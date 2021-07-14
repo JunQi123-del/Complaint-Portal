@@ -278,6 +278,7 @@
           <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{ route('admin.registerform') }}">@yield('register')</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.resetemail') }}">@yield('reset')</a></li>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
