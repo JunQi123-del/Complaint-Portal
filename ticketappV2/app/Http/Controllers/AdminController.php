@@ -11,7 +11,14 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     function dashboard (){
-        return view('dashboards.admins.dashboard');
+        $alltickets = Ticket::count();
+        $investigating = Ticket::where('status','Investigating')->count();
+        $resolved = Ticket::where('status','Resolved')->count();
+        $complaint = Ticket::where('category','Complaint')->count();
+        $feedback = Ticket::where('category','FeedBack')->count();
+        $remark = Ticket::where('category','Remark')->count();
+        $appeal = Ticket::where('category','Appeal')->count();
+        return view('dashboards.admins.dashboard',compact('alltickets','investigating','resolved','complaint','feedback','remark','appeal'));
     }
 
     protected function showRegistrationForm(){

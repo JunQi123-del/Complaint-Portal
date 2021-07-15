@@ -184,7 +184,7 @@
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 All Tickets
-                <span class="badge badge-info right">2</span>
+                <span class="badge badge-info right">0</span>
               </p>
             </a>
           </li>
