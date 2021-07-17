@@ -55,6 +55,24 @@ private static $installed = array (
       ),
       'reference' => 'dff976c2f3487d42c1db75a3b180e2b9f0e72ce0',
     ),
+    'chartisan/php' => 
+    array (
+      'pretty_version' => '1.2.1',
+      'version' => '1.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '85d2352077800e9bcb411aec1ff7e4d23eef93a1',
+    ),
+    'consoletvs/charts' => 
+    array (
+      'pretty_version' => '7.2.0',
+      'version' => '7.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'cc820595e9bec13fbaf4cf552128860830a0f9e2',
+    ),
     'cordoval/hamcrest-php' => 
     array (
       'replaced' => 

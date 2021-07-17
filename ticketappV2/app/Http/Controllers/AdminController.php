@@ -18,7 +18,10 @@ class AdminController extends Controller
         $feedback = Ticket::where('category','FeedBack')->count();
         $remark = Ticket::where('category','Remark')->count();
         $appeal = Ticket::where('category','Appeal')->count();
-        return view('dashboards.admins.dashboard',compact('alltickets','investigating','resolved','complaint','feedback','remark','appeal'));
+        $review = Ticket::where('status','To Be Review')->count();
+        $anony = Ticket::where('is_anonymous','1')->count();
+        $nanony = Ticket::where('is_anonymous','0')->count();
+        return view('dashboards.admins.dashboard',compact('alltickets','investigating','resolved','complaint','feedback','remark','appeal','review','anony','nanony'));
     }
 
     protected function showRegistrationForm(){
@@ -41,7 +44,6 @@ class AdminController extends Controller
         }else{
             return redirect()->back()->with('error','Failed to register');
         }
-
     }
 
     
@@ -61,6 +63,7 @@ class AdminController extends Controller
             return redirect()->back()->with('Error','Ticket not triaged successfully');
         }
     }
+
 
     function resolveticket($id,Request $request)
     {

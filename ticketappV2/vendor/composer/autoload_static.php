@@ -167,7 +167,9 @@ class ComposerStaticInit4ed7e0e1b87401cccfff09c4051c5b4d
         'C' => 
         array (
             'Cron\\' => 5,
+            'ConsoleTVs\\Charts\\' => 18,
             'Collective\\Html\\' => 16,
+            'Chartisan\\PHP\\' => 14,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -489,9 +491,17 @@ class ComposerStaticInit4ed7e0e1b87401cccfff09c4051c5b4d
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'ConsoleTVs\\Charts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/consoletvs/charts/src',
+        ),
         'Collective\\Html\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravelcollective/html/src',
+        ),
+        'Chartisan\\PHP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chartisan/php/src',
         ),
         'Carbon\\' => 
         array (
@@ -651,6 +661,10 @@ class ComposerStaticInit4ed7e0e1b87401cccfff09c4051c5b4d
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Chartisan\\PHP\\ChartData' => __DIR__ . '/..' . '/chartisan/php/src/ChartData.php',
+        'Chartisan\\PHP\\Chartisan' => __DIR__ . '/..' . '/chartisan/php/src/Chartisan.php',
+        'Chartisan\\PHP\\DatasetData' => __DIR__ . '/..' . '/chartisan/php/src/DatasetData.php',
+        'Chartisan\\PHP\\ServerData' => __DIR__ . '/..' . '/chartisan/php/src/ServerData.php',
         'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
         'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
         'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
@@ -659,6 +673,11 @@ class ComposerStaticInit4ed7e0e1b87401cccfff09c4051c5b4d
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'ConsoleTVs\\Charts\\BaseChart' => __DIR__ . '/..' . '/consoletvs/charts/src/BaseChart.php',
+        'ConsoleTVs\\Charts\\ChartsController' => __DIR__ . '/..' . '/consoletvs/charts/src/ChartsController.php',
+        'ConsoleTVs\\Charts\\ChartsServiceProvider' => __DIR__ . '/..' . '/consoletvs/charts/src/ChartsServiceProvider.php',
+        'ConsoleTVs\\Charts\\Commands\\CreateChart' => __DIR__ . '/..' . '/consoletvs/charts/src/Commands/CreateChart.php',
+        'ConsoleTVs\\Charts\\Registrar' => __DIR__ . '/..' . '/consoletvs/charts/src/Registrar.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
