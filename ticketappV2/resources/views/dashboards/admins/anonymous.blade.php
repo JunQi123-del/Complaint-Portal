@@ -41,7 +41,12 @@
         <td>{{$row['email']}}</td>
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
-        <td>{{$row['user_id']}}</td>
+        @foreach($allAccounts as $depart)
+         @if($row->user_id == $depart->id)
+         <td>{{$depart->name}}</td>
+         break;
+         @endif
+         @endforeach
         @if($row->status !='Resolved')
         <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">Triage</button> </td> 
         <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal2-{{$row->id}}">Resolve</button> </td> 

@@ -7,7 +7,7 @@ Remark: {{$remarktickets}}
 Appeal: {{$appealtickets}}
 Anonymous: {{$anony}}
 NonAnonymous: {{$nanony}}
-Under investigation: {{$investigating}}
+Under investigation: {{$investigate}}
 Resolved: {{$resolved}}
 
 
@@ -35,6 +35,7 @@ Ticket Report based from {{$dateFrom}} to {{$dateTo}}
       <th scope="col">Background</th>
       <th scope="col">FirstName</th>
       <th scope="col">LastName</th>
+      <th scope="col">Department</th>
     </tr>
   </thead>
   <tbody>
@@ -52,6 +53,12 @@ Ticket Report based from {{$dateFrom}} to {{$dateTo}}
         <td>{{$row['user_background']}}</td>
         <td>{{$row['first_name']}}</td>
         <td>{{$row['last_name']}}</td>
+         @foreach($users as $depart)
+         @if($row->user_id == $depart->id)
+         <td>{{$depart->name}}</td>
+         break;
+         @endif
+         @endforeach
     </tr>
 
     @endforeach

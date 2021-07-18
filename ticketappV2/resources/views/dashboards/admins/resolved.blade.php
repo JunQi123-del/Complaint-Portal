@@ -39,7 +39,12 @@
         <td>{{$row['email']}}</td>
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
-        <td>{{$row['user_id']}}</td>
+        @foreach($allAccounts as $depart)
+         @if($row->user_id == $depart->id)
+         <td>{{$depart->name}}</td>
+         break;
+         @endif
+         @endforeach
     </tr>
     @endforeach
   </tbody>
