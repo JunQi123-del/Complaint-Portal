@@ -56,7 +56,6 @@ Ticket Report based from {{$dateFrom}} to {{$dateTo}}
          @foreach($users as $depart)
          @if($row->user_id == $depart->id)
          <td>{{$depart->name}}</td>
-         break;
          @endif
          @endforeach
     </tr>
