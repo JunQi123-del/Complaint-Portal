@@ -53,6 +53,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','preventBackHis
     Route::post('triage/{id}',[AdminController::class,'triage'])->name('admin.triage');
     Route::post('resolve/{id}',[AdminController::class,'resolveticket'])->name('admin.resolveticket');
     Route::post('register',[AdminController::class,'Register'])->name('admin.register');
+    Route::post('report',[AdminController::class,'report'])->name('admin.report');
 });
 
 Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','preventBackHistory']], function(){

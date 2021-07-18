@@ -5,6 +5,30 @@
 
 @section('contents')
 
+<form action = "{{ route('admin.report') }}"method = "POST">
+@csrf
+<br>
+<div class = "container">
+  <div class = "row">
+    <div class = "container-fluid">
+      <div class = "form-group row">
+        <label for="date" class="col-form-label col-sm-2">From Date</label>
+        <div class ="col-sm-3">
+          <input type = "date" class="form-control input-sm" id="from" name="from" required/>
+        </div>
+        <label form="date" class="col-form-label col-sm-2">Date Of Birth To </label>
+        <div class = "col-sm-3">
+          <input type= "date" class = "form control input-sm" id ="to" name = "to" required/>
+        </div>
+        <div class = "col-sm-2">
+          <button type ="submit" class="btn-primary" name="search" title="Search">Generate Report</button>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+</form>
 <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->

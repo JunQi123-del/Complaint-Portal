@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Models\user;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 
 class AdminController extends Controller
@@ -44,6 +45,20 @@ class AdminController extends Controller
         }else{
             return redirect()->back()->with('error','Failed to register');
         }
+    }
+
+    function report(Request $request)
+    {
+        $dateFrom = $request->from;
+        $dateTo = $request->to;
+
+        $tickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->get();
+        
+        
+
+
+
+
     }
 
     
