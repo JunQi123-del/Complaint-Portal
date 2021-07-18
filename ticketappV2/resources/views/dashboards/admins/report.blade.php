@@ -7,8 +7,8 @@ Remark: {{$remarktickets}}
 Appeal: {{$appealtickets}}
 Anonymous: {{$anony}}
 NonAnonymous: {{$nanony}}
-Under investigation: {{$resolved}}
-Resolved: {{$investigate}}
+Under investigation: {{$investigating}}
+Resolved: {{$resolved}}
 
 
 
