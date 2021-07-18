@@ -49,7 +49,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','preventBackHis
     Route::get('remark',[AdminController::class,'remark'])->name('admin.remark');
     Route::get('registerform',[AdminController::class,'showRegistrationForm'])->name('admin.registerform');
     Route::get('review',[AdminController::class,'review'])->name('admin.review');
-    Route::get('/viewticket/{id}',[AdminController::class,'show'])->name('admin.view');
+    
     Route::post('register',[AdminController::class,'Register'])->name('admin.register');
 });
 
@@ -80,11 +80,22 @@ Route::post('new-ticket', 'TicketController@store');
 /*-----------------------------Show Ticket---------------------------------------------*/
 Route::get('/ticket/{id}', 'TicketController@show');
 
-/*-----------------------------Show Ticket---------------------------------------------*/
+/*-----------------------------Search Ticket---------------------------------------------*/
 Route::post('/search-ticket', 'TicketController@search');
 
 /*-----------------------------Add Comment---------------------------------------------*/
 Route::post('add-comment', 'CommentController@store');
 
+/*-----------------------------Add Internal Comment---------------------------------------------*/
+Route::post('add-internal-comment', 'CommentController@storeInternal');
+
 /*-----------------------------CKEditor---------------------------------------------*/
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
+
+/*-----------------------------(Temp) Admin ticket show ---------------------------------------------*/
+Route::get('/admin/ticket/{id}','AdminController@show');
+
+/*-----------------------------(Temp) User ticket show ---------------------------------------------*/
+Route::get('/user/ticket/{id}','UserController@show');
+
+
