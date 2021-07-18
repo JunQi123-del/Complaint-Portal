@@ -1,38 +1,127 @@
-.ticket-view{
-    width: 80%;
-    margin: 0 auto;
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    
 }
 
-.ticket-view::after{
-    display: table;
-    content: "";
-    clear: both;
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper-ticket {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    top: 120px;
 }
 
-.ticket-view .ticket-side{
-    width: 60%;
-    margin: 0 0 40px;
-    float: left;
-
-
-}
-
-.sticky-sidebar{
-    padding: 40px 40px 60px;
-    box-sizing: border-box;
-    border-radius: 2px;
-
+#sidebar {
+    width: 350px;
     position: fixed;
-    right: 10%;
-    width: 20%;
-    float:right;
+    top: 120px;
+    right: 0;
+    height: 100vh;
+    z-index: 999;
 
+    color: #000000;
+    transition: all 0.3s;
+}
 
+#sidebar .sidebar-header {
+    padding: 20px;
+    text-align: center;
+}
 
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
 
+.p-cont {
+    width: calc(100% - 350px);
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    .p-cont {
+        width: 100%;
+    }
+
+}
+
+/* ---------------------------------------------------
+    Ticket
+----------------------------------------------------- */
+.ticket-view {
+    margin-bottom: 10px;
+}
+
+.ticket {
+    border: black;
+    border-width: 1px ;
+    border-style: solid;
+    border-radius: 13px;
+}
+
+/* ---------------------------------------------------
+    Card Content
+----------------------------------------------------- */
+.ticket-info{
+    max-width: 18rem; 
+    max-height: 5rem; 
+    margin: auto;
+}
 
 
+/* ---------------------------------------------------
+    Comment
+----------------------------------------------------- */
+.comment{
+    text-align: justify;
+    width: 750px;
+    border: 1px solid rgba(16, 46, 46, 1);
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px 
+}
 
+.internal-comment {
+    text-align: justify;
+    width: 750px;
+    border: 1px solid #ecb21f;
+    background-color: black;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px
+}
+
+.internal-comment p,
+.internal-comment span {
+    color: rgb(184, 183, 183)
+}
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    
+    border-bottom: 5px solid black;
+  }
