@@ -22,7 +22,7 @@ class Comment extends Model
         return $this->belongsTo(Ticket::class);
     }
 
-    public function administrator ()
+    public function user ()
     {
         return $this->belongsTo(User::class);
     }
