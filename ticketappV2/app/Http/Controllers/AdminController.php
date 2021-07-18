@@ -44,7 +44,10 @@ class AdminController extends Controller
 
     function show($id)
     {
-        return view('dashboards.admins.viewticket',['id'=>$id]);
+        $ticket = Ticket::findOrFail($id); 
+
+        return view('ticket.show_admin')
+                ->with('ticket', $ticket);
     }
 
 
