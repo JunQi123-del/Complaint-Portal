@@ -4,6 +4,8 @@
 
 @section('contents')
 
+@include
+
 <table id = "example1" class="table table-striped">
   <thead>
     <tr>
@@ -27,7 +29,7 @@
     @foreach($allTickets as $row)
     <tr>
         <td>{{$row['id']}}</td>
-        <td>{{$row['title']}}</td>
+        <td><a href="/admin/ticket/{{$row['id']}}">{{$row['title']}}</a></td>
         <td>{{$row['status']}}</td>
         <td>{{$row['is_anonymous']}}</td>
         <td>{{$row['category']}}</td>
