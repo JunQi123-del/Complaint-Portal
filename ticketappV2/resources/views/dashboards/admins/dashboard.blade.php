@@ -16,7 +16,7 @@
         <div class ="col-sm-3">
           <input type = "date" class="form-control input-sm" id="from" name="from" required/>
         </div>
-        <label form="date" class="col-form-label col-sm-2">Date Of Birth To </label>
+        <label form="date" class="col-form-label col-sm-2">To Date </label>
         <div class = "col-sm-3">
           <input type= "date" class = "form control input-sm" id ="to" name = "to" required/>
         </div>

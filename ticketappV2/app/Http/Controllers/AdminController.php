@@ -53,11 +53,19 @@ class AdminController extends Controller
         $dateTo = $request->to;
 
         $tickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->get();
+        $users = User::whereBetween('created_at',[$dateFrom,$dateTo])->get();
+        $complainttickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('category','Complaint')->count();
+        $feedbacktickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('category','Feedback')->count();
+        $remarktickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('category','Remaark')->count();
+        $appealtickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('category','Appeal')->count();
+        $anony = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('is_anonymous','1')->count();
+        $nanony = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('is_anonymous','0')->count();
+        $resolved = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('status','Resolved')->count();
+        $investigate = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('status','Investigating')->count();
         
+        return view('dashboards.admins.report',compact('tickets','dateFrom','dateTo','users','complainttickets','feedbacktickets',
+                    'remarktickets','appealtickets','anony','nanony','resolved','investigate'));
         
-
-
-
 
     }
 
