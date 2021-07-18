@@ -42,7 +42,7 @@
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
         @if($row->status == 'To Be Reviewed')
-        <td>{{$row['user_id'}}</td>
+        <td>{{$row['user_id']}}</td>
         @else
         @foreach($allAccounts as $depart)
          @if($row->user_id == $depart->id)
