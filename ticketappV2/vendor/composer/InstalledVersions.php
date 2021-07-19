@@ -224,12 +224,12 @@ private static $installed = array (
     ),
     'guzzlehttp/psr7' => 
     array (
-      'pretty_version' => '1.8.2',
-      'version' => '1.8.2.0',
+      'pretty_version' => '2.0.0',
+      'version' => '2.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'dc960a912984efb74d0a90222870c72c87f10c91',
+      'reference' => '1dc8d9cba3897165e16d12bb13d813afb1eb3fe7',
     ),
     'hamcrest/hamcrest-php' => 
     array (
@@ -457,6 +457,15 @@ private static $installed = array (
         0 => 'v8.48.2',
       ),
     ),
+    'intervention/image' => 
+    array (
+      'pretty_version' => '2.6.0',
+      'version' => '2.6.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a2d7238069bb01322f9c2a661449955434fec9c6',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -517,6 +526,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'ae15b9c4bf918ec3a78f092b8555551dd693fde3',
+    ),
+    'laravolt/avatar' => 
+    array (
+      'pretty_version' => '4.1.4',
+      'version' => '4.1.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f50192566e6e4db7fc9623c1c925642acca5ac6a',
     ),
     'league/commonmark' => 
     array (
@@ -778,6 +796,22 @@ private static $installed = array (
       'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
     ),
     'psr/http-client-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-factory' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '12ac7fcd07e5b077433f5f2bee95b3a771bf61be',
+    ),
+    'psr/http-factory-implementation' => 
     array (
       'provided' => 
       array (

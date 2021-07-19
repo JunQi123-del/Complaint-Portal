@@ -56,4 +56,19 @@ class UserController extends Controller
         $dept = User::find(Auth::user()->id)->tickets;
         return view('dashboards.users.investigating',compact('dept'));
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $ticket = Ticket::findOrFail($id); 
+
+        return view('ticket.show_user')
+                ->with('ticket', $ticket);
+
+    }
 }

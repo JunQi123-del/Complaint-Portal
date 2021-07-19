@@ -30,6 +30,11 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <!-- ticket view css-->
+  <link href="{{ asset('/css/ticket.css') }}" rel="stylesheet">
+  <!-- from bootstrap -->
+  <link href="/css/app.css" rel="stylesheet">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

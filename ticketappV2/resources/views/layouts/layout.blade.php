@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-    
-
-        <header id="header" class="fixed-top">
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,64 +19,65 @@
 
 
         <!-- Styles -->
-         <link href="/css/app.css" rel="stylesheet"><!-- from bootstrap -->
-          <link href="/css/welcomepage/style.css" rel="stylesheet"> 
-         <link href="/css/welcomepage/icofont.min.css" rel="stylesheet">
-         <link href="/css/welcomepage/boxicons.min.css" rel="stylesheet">
-         <link href="/css/welcomepage/animate.min.css" rel="stylesheet">
-         <link href="/css/welcomepage/venobox.min.css" rel="stylesheet">
-         <link href="/css/welcomepage/owl.carousel.min.css" rel="stylesheet">
-         <link href="/css/welcomepage/accordion.css" rel="stylesheet"> 
-         <link href="{{ asset('css/ticket.css') }}" rel="stylesheet"><!-- ticket view sidebar -->        
-
-
-        <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-        <div class="container d-flex">
-        <div class="contact-info mr-auto">
-            <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-            <i class="icofont-phone"></i> +1 5589 55488 55
-        </div>
-        <div class="social-links">
-            <a href="https://twitter.com/murdochuni?lang=en" class="twitter"><i class="icofont-twitter"></i></a>
-            <a href="https://www.facebook.com/MurdochUniversity/" class="facebook"><i class="icofont-facebook"></i></a>
-            <a href="https://www.instagram.com/murdochuniversity/?hl=en" class="instagram"><i class="icofont-instagram"></i></a>
-            <a href="https://www.murdoch.edu.au/"><i class="icofont-home"></i></a>
-            <a href="https://www.linkedin.com/school/murdoch-university/?originalSubdomain=au" class="linkedin"><i class="icofont-linkedin"></i></i></a>
-        </div>
-        </div>
-        </div>
-         
-        <div class="container d-flex align-items-center">
-
-        <!--<h1 class="logo mr-auto"><a href="{{url('/')}}">Green</a></h1>-->
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="{{url('/')}}" class="logo mr-auto"><img src="/image/mur.JPG" alt="Logo" class="img-fluid" ></a>
+        <link href="/css/app.css" rel="stylesheet"><!-- from bootstrap -->
+        <link href="/css/welcomepage/style.css" rel="stylesheet"> 
+        <link href="/css/welcomepage/icofont.min.css" rel="stylesheet">
+        <link href="/css/welcomepage/boxicons.min.css" rel="stylesheet">
+        <link href="/css/welcomepage/animate.min.css" rel="stylesheet">
+        <link href="/css/welcomepage/venobox.min.css" rel="stylesheet">
+        <link href="/css/welcomepage/owl.carousel.min.css" rel="stylesheet">
+        <link href="/css/welcomepage/accordion.css" rel="stylesheet"> 
+        <link href="{{ asset('/css/ticket.css') }}" rel="stylesheet"><!-- ticket view -->
 
         
+    </head>
 
-        <a href="{{ route('login') }}" class="get-started-btn scrollto">login</a>
+    
+    <body>
+        <!-- ======= header ======= -->  
+        <header id="header" class="fixed-top">
+            <!-- top bar -->
+            <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+                <div class="container d-flex">
+                    <div class="contact-info mr-auto">
+                        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+                        <i class="icofont-phone"></i> +1 5589 55488 55
+                    </div>
 
+                    <div class="social-links">
+                        <a href="https://twitter.com/murdochuni?lang=en" class="twitter"><i class="icofont-twitter"></i></a>
+                        <a href="https://www.facebook.com/MurdochUniversity/" class="facebook"><i class="icofont-facebook"></i></a>
+                        <a href="https://www.instagram.com/murdochuniversity/?hl=en" class="instagram"><i class="icofont-instagram"></i></a>
+                        <a href="https://www.murdoch.edu.au/"><i class="icofont-home"></i></a>
+                        <a href="https://www.linkedin.com/school/murdoch-university/?originalSubdomain=au" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container d-flex align-items-center">
+                <!--<h1 class="logo mr-auto"><a href="{{url('/')}}">Green</a></h1>-->
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <a href="{{url('/')}}" class="logo mr-auto"><img src="/image/mur.JPG" alt="Logo" class="img-fluid" ></a>
+
+                <a href="{{ route('login') }}" class="get-started-btn scrollto">login</a>
+            </div>
+        </header><!-- End Header -->
+        
+        <!-- Content -->
+        <div>
+            <!-- ======= Breaking line ======= -->
+            <br><br><br><br><br><br>
+
+            <!-- ======= Pop out alert/notification ======= -->
+            @include('sweetalert::alert')
+
+            <!-- ======= View content ======= -->
+            @yield('content')
         </div>
-    </header><!-- End Header -->
-
-    
-    <body>  
-    <div>
-        <!-- ======= Breaking line ======= -->
-        <br><br><br><br><br><br>
-
-        <!-- ======= Pop out alert/notification ======= -->
-        @include('sweetalert::alert')
-
-        <!-- ======= View content ======= -->
-        @yield('content')
-    </div>
-
+        <!-- End Content -->
   
-    
-
         <!-- ======= Footer ======= -->
-        <footer id="footer">
+        <footer id="footer" style="margin-top: auto;"> 
             <div class="container">
             <h3>Complaint Portal</h3>
             <div class="social-links">

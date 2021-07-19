@@ -1,69 +1,126 @@
 @extends('layouts.layout')
 
 @section('content')
-    <div class="ticket-view">
-        <div class="container ticket-side">
-            <div class="container">
-                <h3>Ticket ID# {{$ticket->id}}</h3>
-                <h1>{{$ticket->title}}</h1>
-                <div container style="border:3px solid #cecece;">
-                    <div style="margin: 20px;">
-                        <strong>Description</strong><br>
-                        {!!$ticket->message!!}
-                    </div>
-                </div>
-            </div>
 
-            
-                <br><br>
-                <hr>
-                <div>
-                    <h3>Comment</h3>
-                    @if ($ticket->comments->isEmpty())
-                        <p>There are currently no comment.</p>
-                    @else
-                    <div class="container">
-                        @foreach($ticket->comments as $ticket->comment)
-                                {{$ticket->comment->created_at}}
-                                {!!$ticket->comment->comment!!}
-                            @endforeach
-                       
+    <div class="wrapper-ticket">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <br>
+            <ul class="list-unstyled">
+                <li>
+                    <div class="card border-primary mb-3 ticket-info">
+                        <div class="card-body">
+                            <h5 class="card-title">Status</h5>
+                            <p class="card-text">{{$ticket->status}}</p>
+                        </div>
                     </div>
+                </li>
+                <li>
+                    <div class="card border-primary mb-3 ticket-info">
+                        <div class="card-body">
+                            <h5 class="card-title">Created on</h5>
+                            <p class="card-text">{{$ticket->created_at->toFormattedDateString()}}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card border-primary mb-3 ticket-info">
+                        <div class="card-body">
+                            <h5 class="card-title">Last updated</h5>
+                            <p class="card-text">{{$ticket->updated_at->diffForHumans()}}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card border-primary mb-3 ticket-info">
+                        <div class="card-body">
+                            <h5 class="card-title">Handel by</h5>
+                            <p class="card-text">Portal Admininstrator </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card border-primary mb-3 ticket-info">
+                        <div class="card-body">
+                            <h5 class="card-title">Triage to(department)</h5>
+                            @if(is_null($ticket->user_id))
+                                <p class="card-text">To be triage </p>
+                            @else
+                                <p class="card-text">{{$ticket->user->name}} </p>
+                            @endif
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div class="container ticket-view">
+            @if($ticket->is_anonymous == 0)
+                <h2 class="card-title">{{$ticket->category}} ID {{$ticket->id}} </h2>
+            @else
+                <h2 class="card-title">Anonymous {{$ticket->category}} ID {{$ticket->id}} </h2>
+            @endif
+            
+            <div class="card mb-3 ticket" style ="width: 750px;">  
+                <div class="card-body">
+                    <h2 class="card-title">{{$ticket->title}}</h2>
+                    <p class="card-text">{!!$ticket->message!!}</p>
+
+                    @if($ticket->is_anonymous == 0)
+                        <p class="card-text" style = "text-align: right"><small class="text-muted">raised by {{$ticket->first_name}} {{$ticket->last_name}} at {{$ticket->created_at}}</small></p>
+                    @else
+                        <p class="card-text" style = "text-align: right"><small class="text-muted">raised anonymously at {{$ticket->created_at}}</small></p>
                     @endif
                     
-                    <hr>
-                    @include('comment.create')
-                   
-                    
-
                 </div>
-
-                <br>
-                <a href= "/ticket/create/complaint">
-                    <button class="btn btn-primary">
-                        Return Home Page
-                    </button>
-                </a>
-            
-
-        </div>
-
-        <div class="sidebar"></div>
-        <div class="sticky-sidebar">
-            <div class="container">
-                <p class="h6">Created on <br>{{$ticket->created_at}}</p> 
-                <br>
-                <p class="h6">Last updated on <br>{{$ticket->updated_at}}</p>
-                <br>
-                <p class="h6">Status <br>{{$ticket->status}}</p>
-                <br>
-                <p class="h6">Reported by <br>{{$ticket->first_name}}  {{$ticket->last_name}}</p>
-                <br>
-                <p class="h6">Handel by <br>{{'To be assigned'}}</p>
-                <br>
-                <p class="h6">Triage to <br>{{'To be assigned'}}</p>
             </div>
+
+            
+            <div class="container">
+                <h3>Comments</h3>
+                @if ($ticket->comments->isEmpty())
+                    No comment added......
+                @else
+                    @foreach($ticket->comments as $ticket->comment)
+
+                        @if($ticket->comment->is_internal == 0)
+                            <div class = "comment mt-4">
+
+                                @if(is_null($ticket->comment->user_id))
+
+                                    @if($ticket->is_anonymous == 0)
+                                        <img src="{{ Avatar::create("$ticket->first_name $ticket->last_name")->toBase64() }}" /> 
+                                        <span>{{$ticket->first_name}} {{$ticket->last_name}}  -  {{$ticket->comment->created_at->diffForHumans()}}</span>
+                                    @else
+                                        <img src="{{ Avatar::create("Anonymous User")->toBase64() }}" /> 
+                                        <span>Anonymous User  -  {{$ticket->comment->created_at->diffForHumans()}}</span>
+                                    @endif
+
+                                @else
+                                    <img src="{{ Avatar::create("$ticket->user->name")->toBase64() }}" /> 
+                                    <span>{{$ticket->comment->user->name}}  -  {{$ticket->comment->created_at->diffForHumans()}}</span>
+                                @endif
+
+                                {!!$ticket->comment->comment!!}
+                            </div>
+                        @endif
+                    @endforeach
+                @endif
+                    
+                @include('comment.create')
+            </div>
+
+            <a href= "/">
+                <button class="btn btn-primary">
+                    Return Home Page
+                </button>
+            </a>
+            <br><br>
         </div>
+
     </div>
 
 @endsection
