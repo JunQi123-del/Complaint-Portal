@@ -4,7 +4,6 @@
 
 @section('contents')
 
-@include
 
 <table id = "example1" class="table table-striped">
   <thead>
