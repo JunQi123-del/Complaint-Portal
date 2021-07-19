@@ -1,5 +1,5 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','All Tickets')
+@section('title','All Ticket')
 @section('header','All Tickets')
 
 @section('contents')
@@ -42,7 +42,15 @@
         <td>{{$row['email']}}</td>
         <td>{{$row['created_at']}}</td>
         <td>{{$row['updated_at']}}</td>
+        @if($row->status == 'To Be Reviewed')
         <td>{{$row['user_id']}}</td>
+        @else
+        @foreach($allAccounts as $depart)
+         @if($row->user_id == $depart->id)
+         <td>{{$depart->name}}</td>
+         @endif
+         @endforeach
+         @endif
         @if($row->status !='Resolved')
         <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">Triage</button> </td> 
         <td> <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal2-{{$row->id}}">Resolve</button> </td> 
