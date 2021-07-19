@@ -1,6 +1,6 @@
-@extends('layouts.layout')
+@extends('dashboards.admins.layouts.admin-dash-layout')
 
-@section('content')
+@section('contents')
 
     <div class="wrapper-ticket">
         <!-- Sidebar  -->
@@ -59,9 +59,9 @@
         <!-- Page Content  -->
         <div class="container ticket-view">
             @if($ticket->is_anonymous == 0)
-                <h2 class="card-title">{{$ticket->category}} ID {{$ticket->id}} </h2>
+                <h2>{{$ticket->category}} ID {{$ticket->id}} </h2>
             @else
-                <h2 class="card-title">Anonymous {{$ticket->category}} ID {{$ticket->id}} </h2>
+                <h2>Anonymous {{$ticket->category}} ID {{$ticket->id}} </h2>
             @endif
             
             <div class="card mb-3 ticket" style ="width: 750px;">  
@@ -106,23 +106,22 @@
 
                                 {!!$ticket->comment->comment!!}
                             </div>
+                        @else
+                            <div class = "internal-comment mt-4">
+                                <img src="{{ Avatar::create("$ticket->comment->user->name")->toBase64() }}" /> 
+                                <span>{{$ticket->comment->user->name}}  -  {{$ticket->comment->created_at->diffForHumans()}}</span>
+                                {!!$ticket->comment->comment!!}
+                            </div>
                         @endif
+
                     @endforeach
                 @endif
-                    
+                  
                 @include('comment.create')
             </div>
 
-            <a href= "/">
-                <button class="btn btn-primary">
-                    Return Home Page
-                </button>
-            </a>
             <br><br>
         </div>
 
     </div>
-
 @endsection
-
-

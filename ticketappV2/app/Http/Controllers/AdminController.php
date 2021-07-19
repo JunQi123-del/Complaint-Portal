@@ -135,4 +135,12 @@ class AdminController extends Controller
         $allAccounts = user::all();
         return view('dashboards.admins.review',compact('review','allAccounts'));
     }
+    
+    function show($id)
+    {
+        $ticket = Ticket::findOrFail($id); 
+
+        return view('ticket.show_admin')
+                ->with('ticket', $ticket);
+    }
 }

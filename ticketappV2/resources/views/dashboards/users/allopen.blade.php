@@ -25,7 +25,7 @@
     @foreach($dept as $row)
     <tr>
         <td>{{$row['id']}}</td>
-        <td>{{$row['title']}}</td>
+        <td><a href="/user/ticket/{{$row['id']}}">{{$row['title']}}</a></td>
         <td>{{$row['status']}}</td>
         <td>{{$row['is_anonymous']}}</td>
         <td>{{$row['category']}}</td>

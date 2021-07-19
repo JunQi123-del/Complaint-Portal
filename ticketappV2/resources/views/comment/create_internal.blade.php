@@ -15,12 +15,12 @@
     font-size: 20px;
     color: #00BFFF;
     left: 0">
-    <a onClick="$('#commentForm').show();">Add Comment</a>
+    <a onClick="$('#commentForm').show();">Add Internal Comment</a>
 </div>
 
 <div style="width: 750px;">
     {!! Form::open([
-        'action'                    => 'CommentController@store', 
+        'action'                    => 'CommentController@storeInternal', 
         'id'                        => 'commentForm', 
         'method'                    => 'POST', 
         'enctype'                   => 'multipart/form-data'
@@ -29,7 +29,7 @@
     @CSRF
     
     <input type="hidden" value="{{$ticket->id}}" name="ticket_id">
-    <input type="hidden" value="0" name="internal">
+    <input type="hidden" value="1" name="internal">
 
     <div class="form-group">
     {{Form::textarea('comment', '', [
@@ -62,6 +62,3 @@ function hideTextArea() {
 window.onload = hideTextArea;
 
 </script>
-
-
-
