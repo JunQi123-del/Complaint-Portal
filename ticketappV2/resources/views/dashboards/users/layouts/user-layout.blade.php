@@ -118,16 +118,15 @@
           <li class="nav-header">Tickets Received</li>
           <li class="nav-item">
             <a href="{{ route('user.allopen') }}" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="nav-icon fas fa-info-circle"></i>
               <p>
                 All Tickets
-                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ route('user.anonymous') }}" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+              <i class="nav-icon fas fa-user-alt"></i>
               <p>
                 Anonymous
               </p>
@@ -135,14 +134,14 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('user.nanonymous') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon fas fa-user-alt"></i>
               <p>
                 Non-Anonymous
               </p>
             </a>
             <li class="nav-item">
             <a href="{{ route('user.complaint') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon fas fa-envelope-open-text"></i>
               <p>
                 Complaint
               </p>
@@ -157,14 +156,14 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('user.appeal') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon far fa-file-alt"></i>
               <p>
                 Appeal
               </p>
             </a>
             <li class="nav-item">
             <a href="{{ route('user.remark') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon far fa-clipboard"></i>
               <p>
                 Remark
               </p>
@@ -173,16 +172,15 @@
           <li class="nav-header">Status</li>
           <li class="nav-item">
             <a href="{{ route('user.resolved') }}" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="nav-icon fas fa-check-circle"></i>
               <p>
                resolved
-                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ route('user.investigating') }}" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+              <i class="nav-icon fas fa-tools"></i>
               <p>
                 Investigating
               </p>
