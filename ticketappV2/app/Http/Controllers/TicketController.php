@@ -96,7 +96,7 @@ class TicketController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
         $ticket = new Ticket;
 
         // retrieve the basic information of the ticket
@@ -105,7 +105,6 @@ class TicketController extends Controller
         $ticket->title = request('title');
         $ticket->message = request('body');
         $ticket->status = 'To Be Reviewed';
-        //$ticket->attatchment = request('cover_image'); later then do
 
         if(($request->has('student')) && ($ticket->is_anonymous == 0) )
         { 
