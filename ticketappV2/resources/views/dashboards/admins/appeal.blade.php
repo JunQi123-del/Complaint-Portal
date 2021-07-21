@@ -44,11 +44,13 @@
         <td>{{$row['first_name']}}</td>
         <td>{{$row['last_name']}}</td>
         <td>{{$row['email']}}</td>
+
         <td>{{$row['created_at']->toFormattedDateString()}}</td>
         <td>{{$row['updated_at']->diffForHumans()}}</td>
         
         @if($row->status == "Resolved")
           <td> {{$row->created_at->diffInDays($row->updated_at)}} days</td> 
+
         @else
           <td>-</td>
         @endif

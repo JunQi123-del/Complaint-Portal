@@ -6,6 +6,9 @@
 <button type="button" class="btn btn-primary">Register</button>
 @endsection
 
+@section('reset')
+<button type="button" class="btn btn-primary">Reset</button>
+@endsection
 
 
 

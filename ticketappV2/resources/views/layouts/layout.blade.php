@@ -40,8 +40,8 @@
             <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
                 <div class="container d-flex">
                     <div class="contact-info mr-auto">
-                        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-                        <i class="icofont-phone"></i> +1 5589 55488 55
+                        <i class="icofont-envelope"></i> <a href="mailto:studentcentre@murdoch.edu.au">studentcentre@murdoch.edu.au</a>
+                        <i class="icofont-phone"></i> 1300 687 3624
                     </div>
 
                     <div class="social-links">

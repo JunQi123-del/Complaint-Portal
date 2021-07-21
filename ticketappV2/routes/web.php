@@ -49,8 +49,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','preventBackHis
     Route::get('remark',[AdminController::class,'remark'])->name('admin.remark');
     Route::get('registerform',[AdminController::class,'showRegistrationForm'])->name('admin.registerform');
     Route::get('review',[AdminController::class,'review'])->name('admin.review');
+    Route::get('email',[AdminController::class,'emailpage'])->name('admin.resetemail');
     Route::post('triage/{id}',[AdminController::class,'triage'])->name('admin.triage');
     Route::post('register',[AdminController::class,'Register'])->name('admin.register');
+    Route::post('report',[AdminController::class,'report'])->name('admin.report');
 });
 
 Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','preventBackHistory']], function(){

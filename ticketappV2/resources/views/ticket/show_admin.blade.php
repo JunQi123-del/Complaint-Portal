@@ -11,6 +11,7 @@
                     <div class="card border-primary mb-3 ticket-info">
                         <div class="card-body">
                             <h5 class="card-title">Status</h5>
+
                             @if($ticket->status != "Resolved")
                                 <button type="button" style="margin-left: 25px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2-{{$ticket->id}}">{{$ticket->status}}</button>
                             @else
@@ -18,6 +19,7 @@
                             @endif
                         </div>
                         @include('ticket.change_status')
+
                     </div>
                 </li>
                 <li>
@@ -31,7 +33,9 @@
                 <li>
                     <div class="card border-primary mb-3 ticket-info">
                         <div class="card-body">
+
                             <h5 class="card-title">Last response</h5>
+
                             <p class="card-text">{{$ticket->updated_at->diffForHumans()}}</p>
                         </div>
                     </div>
@@ -39,7 +43,9 @@
                 <li>
                     <div class="card border-primary mb-3 ticket-info">
                         <div class="card-body">
+
                             <h5 class="card-title">Handle by</h5>
+
                             <p class="card-text">Portal Admininstrator </p>
                         </div>
                     </div>
@@ -105,7 +111,9 @@
                                     @endif
 
                                 @else
+
                                     <img src="{{ Avatar::create("$ticket->comment->user->name")->toBase64() }}" /> 
+
                                     <span>{{$ticket->comment->user->name}}  -  {{$ticket->comment->created_at->diffForHumans()}}</span>
                                 @endif
 
@@ -121,18 +129,22 @@
 
                     @endforeach
                 @endif
+
                 
                 @if(strcasecmp($ticket->status, 'Resolved') != 0)
                     @include('comment.create_admin')
                 @endif
+
             </div>
 
             <br><br>
         </div>
 
     </div>
+
     
 
  
 
 @endsection
+
