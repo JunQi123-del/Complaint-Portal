@@ -6,12 +6,23 @@ use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Models\user;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 
 class AdminController extends Controller
 {
     function dashboard (){
-        return view('dashboards.admins.dashboard');
+        $alltickets = Ticket::count();
+        $investigating = Ticket::where('status','Investigating')->count();
+        $resolved = Ticket::where('status','Resolved')->count();
+        $complaint = Ticket::where('category','Complaint')->count();
+        $feedback = Ticket::where('category','FeedBack')->count();
+        $remark = Ticket::where('category','Remark')->count();
+        $appeal = Ticket::where('category','Appeal')->count();
+        $review = Ticket::where('status','To Be Review')->count();
+        $anony = Ticket::where('is_anonymous','1')->count();
+        $nanony = Ticket::where('is_anonymous','0')->count();
+        return view('dashboards.admins.dashboard',compact('alltickets','investigating','resolved','complaint','feedback','remark','appeal','review','anony','nanony'));
     }
 
     protected function showRegistrationForm(){
@@ -34,6 +45,28 @@ class AdminController extends Controller
         }else{
             return redirect()->back()->with('error','Failed to register');
         }
+    }
+
+    function report(Request $request)
+    {
+        $dateFrom = $request->from;
+        $dateTo = $request->to;
+
+        $tickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->get();
+        $users = User::all();
+        $usersfiltered = User::whereBetween('created_at',[$dateFrom,$dateTo])->get();
+        $complainttickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('category','Complaint')->count();
+        $feedbacktickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('category','Feedback')->count();
+        $remarktickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('category','Remark')->count();
+        $appealtickets = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('category','Appeal')->count();
+        $anony = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('is_anonymous','1')->count();
+        $nanony = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('is_anonymous','0')->count();
+        $resolved = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('status','Resolved')->count();
+        $investigate = Ticket::whereBetween('created_at',[$dateFrom,$dateTo])->where('status','Investigating')->count();
+        
+        return view('dashboards.admins.report',compact('tickets','dateFrom','dateTo','usersfiltered','complainttickets','feedbacktickets',
+                    'remarktickets','appealtickets','anony','nanony','resolved','investigate','users'));
+        
 
     }
 
@@ -55,6 +88,7 @@ class AdminController extends Controller
         }
     }
 
+
     function resolveticket($id,Request $request)
     {
         $ticketdata = Ticket::find($id);
@@ -67,6 +101,10 @@ class AdminController extends Controller
         {
             return redirect()->back()->with('Error','Ticket not resolved successfully');
         }
+    }
+
+    protected function emailpage(){
+        return view ('dashboards.admins.sendemail');
     }
 
 

@@ -32,11 +32,13 @@
         @endif
 
         <td>{{$row['category']}}</td>
+
         <td>{{$row['created_at']->toFormattedDateString()}}</td>
         <td>{{$row['updated_at']->diffForHumans()}}</td>
         
         @if($row->status == "Resolved")
           <td> {{$row->created_at->diffInDays($row->updated_at)}} days</td> 
+
         @else
           <td>-</td>
         @endif

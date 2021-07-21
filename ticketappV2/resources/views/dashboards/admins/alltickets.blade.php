@@ -1,8 +1,10 @@
 @extends('dashboards.admins.layouts.admin-dash-layout')
-@section('title','All Tickets')
+@section('title','All Ticket')
 @section('header','All Tickets')
 
 @section('contents')
+
+
 
 <table id = "example1" class="table table-striped">
   <thead>
@@ -57,6 +59,7 @@
           <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">Triage</button> </td> 
         @elseif($row->status != "Resolved")
           <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">{{$row->user->name}}</button> </td>
+
         @else
           <td>{{$row->user->name}}</td>
         @endif

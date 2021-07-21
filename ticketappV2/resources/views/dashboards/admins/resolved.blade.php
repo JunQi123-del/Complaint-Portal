@@ -44,6 +44,7 @@
         <td>{{$row['first_name']}}</td>
         <td>{{$row['last_name']}}</td>
         <td>{{$row['email']}}</td>
+
         <td>{{$row['created_at']->toFormattedDateString()}}</td>
         <td>{{$row['updated_at']->diffForHumans()}}</td>
         
@@ -56,6 +57,7 @@
         
         <td>{{$row->user->name}}</td>
         
+
     </tr>
     @endforeach
   </tbody>
