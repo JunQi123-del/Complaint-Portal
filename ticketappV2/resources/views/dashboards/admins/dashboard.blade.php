@@ -52,7 +52,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>{{$investigating}}<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{$investigating}}</h3>
 
                 <p>Tickets under investigation</p>
               </div>
