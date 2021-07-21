@@ -55,8 +55,10 @@
 
         @if($row->user_id == null)
           <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">Triage</button> </td> 
-        @else
+        @elseif($row->status != "Resolved")
           <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">{{$row->user->name}}</button> </td>
+        @else
+          <td>{{$row->user->name}}</td>
         @endif
 
         <!-- Triage Modal -->
