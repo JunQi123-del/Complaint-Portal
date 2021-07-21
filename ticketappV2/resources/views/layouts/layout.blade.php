@@ -102,6 +102,12 @@
 
         <!-- back to top have not implemen -->
         <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+        <script type ="text/javascript">
+            function disableBack() { window.history.forward(); }
+            setTimeout("disableBack()", 0);
+            window.onunload = function () { null };
+        </script>
                 
     </body>
 
