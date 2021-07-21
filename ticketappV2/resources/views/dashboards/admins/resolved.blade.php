@@ -53,11 +53,9 @@
           <td>-</td>
         @endif
 
-        @if($row->user_id == null)
-          <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">Triage</button> </td> 
-        @else
-          <td> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$row->id}}">{{$row->user->name}}</button> </td>
-        @endif
+        
+        <td>{{$row->user->name}}</td>
+        
     </tr>
     @endforeach
   </tbody>
