@@ -10,15 +10,16 @@ use Illuminate\Notifications\Notification;
 class CommentNotification extends Notification
 {
     use Queueable;
+    private $ticket;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($ticket)
     {
-        //
+        $this->ticket = $ticket;
     }
 
     /**
@@ -41,9 +42,12 @@ class CommentNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->greeting('Greetings, Mr/Ms. '.$this->ticket->last_name)
+                    ->line('An update had been given to your ' .$this->ticket->category.' raised.')
+                    ->line('Please use that ID given to access it via the portal search engine.
+                                Or you may also use the link provided below to access you ticket at any time if need.')
+                    ->action('View '.$this->ticket->category, url('/ticket/'.$this->ticket->id))
+                    ->line('Thank you for using our complaint portal!');
     }
 
     /**

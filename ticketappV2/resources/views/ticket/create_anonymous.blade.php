@@ -72,7 +72,7 @@
             {{Form::file('cover_image')}}
         </div>
 
-        <a href= "/ticket/create/complaint">
+        <a href= "/">
             {{Form::button('Return Home Page', ['class'=>'btn btn-primary'])}}
         </a>
         

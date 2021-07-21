@@ -26,7 +26,7 @@
                 <li>
                     <div class="card border-primary mb-3 ticket-info">
                         <div class="card-body">
-                            <h5 class="card-title">Last updated</h5>
+                            <h5 class="card-title">Last response</h5>
                             <p class="card-text">{{$ticket->updated_at->diffForHumans()}}</p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <li>
                     <div class="card border-primary mb-3 ticket-info">
                         <div class="card-body">
-                            <h5 class="card-title">Handel by</h5>
+                            <h5 class="card-title">Handle by</h5>
                             <p class="card-text">Portal Admininstrator </p>
                         </div>
                     </div>
@@ -109,8 +109,11 @@
                         @endif
                     @endforeach
                 @endif
-                    
-                @include('comment.create')
+                
+                @if(strcasecmp($ticket->status, 'Resolved') != 0)
+                    @include('comment.create')
+                @endif
+                
             </div>
 
             <a href= "/">

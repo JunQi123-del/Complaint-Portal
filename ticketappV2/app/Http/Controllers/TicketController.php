@@ -119,6 +119,8 @@ class TicketController extends Controller
             }
 
             $ticket->user_background = $request->input('student');
+            $ticket->student_id = request('stu_id');
+            $ticket->school = request('school');
         }
         else if($request->has('staff'))
         {
@@ -148,10 +150,8 @@ class TicketController extends Controller
         {
             $ticket->first_name = request('first');
             $ticket->last_name = request('last');
-            $ticket->student_id = request('stu_id');
-            $ticket->school = request('school');
             $ticket->email = request('email');
-
+            
             $ticket->save();
 
             Notification::route('mail', $ticket->email)->notify(new TicketNotification($ticket));

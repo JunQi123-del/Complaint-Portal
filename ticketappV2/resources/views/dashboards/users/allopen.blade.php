@@ -3,6 +3,7 @@
 @section('header','All Tickets')
 
 @section('contents')
+
 <table id = "example1" class="table table-striped">
   <thead>
     <tr>
@@ -18,31 +19,42 @@
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
       <th scope="col">created at</th>
-      <th scope="col">updated at</th>
+      <th scope="col">Last Response</th>
+      <th scope="col">Days To Resolve</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($dept as $row)
+  @foreach($dept as $row)
     <tr>
         <td>{{$row['id']}}</td>
         <td><a href="/user/ticket/{{$row['id']}}">{{$row['title']}}</a></td>
         <td>{{$row['status']}}</td>
-        <td>{{$row['is_anonymous']}}</td>
+
+        @if($row->is_anonymous == 1)
+          <td> Anonymous </td> 
+        @else
+          <td> Not Anonymous </td> 
+        @endif
+
         <td>{{$row['category']}}</td>
         <td>{{$row['user_background']}}</td>
         <td>{{$row['student_id']}}</td>
         <td>{{$row['school']}}</td>
         <td>{{$row['first_name']}}</td>
         <td>{{$row['last_name']}}</td>
-        <td>{{$row['Email']}}</td>
-        <td>{{$row['created_at']}}</td>
-        <td>{{$row['updated_at']}}</td>
+        <td>{{$row['email']}}</td>
+        <td>{{$row['created_at']->toFormattedDateString()}}</td>
+        <td>{{$row['updated_at']->diffForHumans()}}</td>
+        
+        @if($row->status == "Resolved")
+          <td> {{$row->created_at->diffInDays($row->updated_at)}} days</td> 
+        @else
+          <td>-</td>
+        @endif
     </tr>
-
     @endforeach
   </tbody>
 </table>
-
 
 
 @endsection
