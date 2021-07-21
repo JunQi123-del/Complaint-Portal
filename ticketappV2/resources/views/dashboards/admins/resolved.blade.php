@@ -53,7 +53,6 @@
           <td>-</td>
         @endif
 
-        
         <td>{{$row->user->name}}</td>
         
     </tr>

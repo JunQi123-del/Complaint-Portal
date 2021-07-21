@@ -54,6 +54,8 @@
                 {{Form::label('body', 'Description')}}
             </div>
             <p>Please detail below the nature of your incidents or events.<span>(be as specific as possible)</span></p>
+            <p>You are able to provide further documents for more information.</p>
+            <strong>Please Upload the files using the feature provided by the text editor.</strong><br>
             {{Form::textarea('body', '', [
                 'id'                            => 'summary-ckeditor', 
                 'class'                         => 'form-control', 
@@ -61,15 +63,6 @@
                 'data-parsley-required-message' => 'Description is required', 
                 'data-parsley-trigger'          => 'keyup'
             ])}}
-        </div>
-
-        <div class="form-group">
-            <div style ="font-weight: bold; font-size: 20px;">
-                {{Form::label('attachment', 'File Attachment (Optional)')}}
-            </div>    
-            <p>You are able to provide further documents for more information.</p>
-            <strong>Please Upload multiple files in form of one compressed zip file if needed.</strong><br>
-            {{Form::file('cover_image')}}
         </div>
 
         <a href= "/">
