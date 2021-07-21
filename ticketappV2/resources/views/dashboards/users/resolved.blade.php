@@ -58,8 +58,5 @@
   </tbody>
 </table>
 
-
 @endsection
 
-
-@endsection
