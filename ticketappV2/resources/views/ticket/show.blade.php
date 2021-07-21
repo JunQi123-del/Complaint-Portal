@@ -109,8 +109,11 @@
                         @endif
                     @endforeach
                 @endif
-                    
-                @include('comment.create')
+                
+                @if(strcasecmp($ticket->status, 'Resolved') != 0)
+                    @include('comment.create')
+                @endif
+                
             </div>
 
             <a href= "/">

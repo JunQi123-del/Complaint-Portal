@@ -50,7 +50,6 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','preventBackHis
     Route::get('registerform',[AdminController::class,'showRegistrationForm'])->name('admin.registerform');
     Route::get('review',[AdminController::class,'review'])->name('admin.review');
     Route::post('triage/{id}',[AdminController::class,'triage'])->name('admin.triage');
-    Route::post('resolve/{id}',[AdminController::class,'resolveticket'])->name('admin.resolveticket');
     Route::post('register',[AdminController::class,'Register'])->name('admin.register');
 });
 
@@ -87,8 +86,8 @@ Route::post('/search-ticket', 'TicketController@search');
 /*-----------------------------Add Comment---------------------------------------------*/
 Route::post('add-comment', 'CommentController@store');
 
-/*-----------------------------Add Internal Comment---------------------------------------------*/
-Route::post('add-internal-comment', 'CommentController@storeInternal');
+/*-----------------------------Add Privilege User Comment---------------------------------------------*/
+Route::post('add-internal-comment', 'CommentController@storeUserComment');
 
 /*-----------------------------CKEditor---------------------------------------------*/
 Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
@@ -98,5 +97,8 @@ Route::get('/admin/ticket/{id}','AdminController@show');
 
 /*-----------------------------(Temp) User ticket show ---------------------------------------------*/
 Route::get('/user/ticket/{id}','UserController@show');
+
+/*-----------------------------(Temp) Admin change ticket status ---------------------------------------------*/
+Route::post('/admin/ticket/{id}','AdminController@updateStatus');
 
 

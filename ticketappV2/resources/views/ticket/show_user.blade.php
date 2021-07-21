@@ -117,7 +117,9 @@
                     @endforeach
                 @endif
                   
-                @include('comment.create_internal')
+                @if(strcasecmp($ticket->status, 'Resolved') != 0)
+                    @include('comment.create_user')
+                @endif
             </div>
 
             <br><br>

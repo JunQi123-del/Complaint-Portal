@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;                 // able to use the comment model inside this controller
 use App\Models\User;                    // able to use the user model inside this controller
+use App\Models\Ticket; 
 use DB;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Notifications\CommentNotification;
 use Illuminate\Support\Facades\Notification; 
 
@@ -44,15 +46,10 @@ class CommentController extends Controller
         $comment->comment = $request->comment;
         $comment->is_internal = $request->internal;
         $comment->ticket_id = $request->ticket_id;
-
-        if(auth()->user()->id)
-        {
-            $comment->user_id = auth()->user()->id;
-        }
         
         $comment->save();
 
-        return redirect('/ticket/'.$comment->ticket_id)->with('toast_success', 'Comment Added Successfully!');;
+        return redirect('/ticket/'.$comment->ticket_id)->with('toast_success', 'Comment Added Successfully!');
     }
 
     /**
@@ -61,7 +58,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeInternal(Request $request)
+    public function storeUserComment(Request $request)
     {
         $comment = new Comment;
 
@@ -72,7 +69,25 @@ class CommentController extends Controller
 
         $comment->save();
 
-        return redirect('/user/ticket/'.$comment->ticket_id)->with('toast_success', 'Comment Added Successfully!');;
+        if($comment->user_id == 1)
+        {
+            if($comment->is_internal == 0)
+            {
+                $ticket = Ticket::findOrFail($comment->ticket_id);
+                $ticket->updated_at = $comment->created_at;
+                $ticket->save();
+
+                if($ticket->is_anonymous == 0)
+                {
+                    Notification::route('mail', $ticket->email)->notify(new CommentNotification($ticket));
+                }
+            }
+            return redirect('/admin/ticket/'.$comment->ticket_id)->with('toast_success', 'Comment Added Successfully!');
+        }
+        else
+        {
+            return redirect('/user/ticket/'.$comment->ticket_id)->with('toast_success', 'Comment Added Successfully!');
+        }
     }
 
     /**

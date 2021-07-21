@@ -143,4 +143,19 @@ class AdminController extends Controller
         return view('ticket.show_admin')
                 ->with('ticket', $ticket);
     }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $ticket = Ticket::findOrfail($id);
+        $ticket->status = request('status');
+
+        if($ticket->save())
+        {
+            return redirect()->back()->with('Success','Ticket resolved successfully');
+        }
+        else
+        {
+            return redirect()->back()->with('Error','Ticket not resolved successfully');
+        }
+    }
 }
