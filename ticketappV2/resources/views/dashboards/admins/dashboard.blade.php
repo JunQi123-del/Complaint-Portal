@@ -52,7 +52,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>{{$investigating}}<sup style="font-size: 20px">%</sup></h3>
+                <h3>{{$investigating}}</h3>
 
                 <p>Tickets under investigation</p>
               </div>
@@ -132,7 +132,7 @@
                 <p>Total Appeal tickets</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="ion-ios-list"></i>
               </div>
               <a href="{{ route('admin.appeal') }}" class="small-box-footer">Go to appeal tickets <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -147,7 +147,7 @@
                 <p>Total Tickets that needs reviewing</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="ion-chatbubble-working"></i>
               </div>
               <a href="{{ route('admin.review') }}" class="small-box-footer">Go to review tickets<i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -162,7 +162,7 @@
                 <p>Total Non Anonymous tickets</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="ion-person-stalker"></i>
               </div>
               <a href="{{ route('admin.non-anonymous') }}" class="small-box-footer">Go to non anonymous tickets <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -177,7 +177,7 @@
                 <p>Total Anonymous tickets</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="ion-social-snapchat-outline"></i>
               </div>
               <a href="{{ route('admin.anonymous') }}" class="small-box-footer"> Go to anonymous tickets<i class="fas fa-arrow-circle-right"></i></a>
             </div>

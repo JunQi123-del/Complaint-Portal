@@ -94,17 +94,6 @@
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -121,7 +110,7 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('admin.allaccounts') }}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 AllAccounts
               </p>
@@ -131,10 +120,9 @@
           <li class="nav-header">Tickets Received</li>
           <li class="nav-item">
             <a href="{{ route('admin.alltickets') }}" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="nav-icon fas fa-info-circle"></i>
               <p>
                 All Tickets
-                <span class="badge badge-info right">0</span>
               </p>
             </a>
           </li>
@@ -148,21 +136,21 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('admin.non-anonymous') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon fas fa-user-alt"></i>
               <p>
                 Non-Anonymous
               </p>
             </a>
             <li class="nav-item">
             <a href="{{ route('admin.complaint') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon fas fa-envelope-open-text"></i>
               <p>
                 Complaint
               </p>
             </a>
             <li class="nav-item">
             <a href="{{ route('admin.feedback') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon far fa-file-alt"></i>
               <p>
                 Feedback
               </p>
@@ -170,14 +158,14 @@
           </li>
           <li class="nav-item">
             <a href="{{ route('admin.appeal') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon far fa-clipboard"></i>
               <p>
                 Appeal
               </p>
             </a>
             <li class="nav-item">
             <a href="{{ route('admin.remark') }}" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+              <i class="nav-icon far fa-file-alt"></i>
               <p>
                 Remark
               </p>
@@ -186,10 +174,9 @@
           <li class="nav-header">Status</li>
           <li class="nav-item">
             <a href="{{ route('admin.resolved') }}" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
+              <i class="nav-icon fas fa-check-square"></i>
               <p>
                resolved
-                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
