@@ -102,8 +102,9 @@ class AdminController extends Controller
         foreach ($all_tickets as $ticket) {
             $avg += $ticket->created_at->diffInDays($ticket->updated_at);
         }
+        if($avg>0){
         $avg /= $tickets_count;
-
+        }
         /*
         |--------------------------------------------------------------------------
         | All non-anonymous ticket process information (resolved)
@@ -141,8 +142,9 @@ class AdminController extends Controller
         foreach ($non_tickets as $n_t) {
             $avgNon += $n_t->created_at->diffInDays($n_t->updated_at);
         }
+        if($avgNon>0){
         $avgNon /= $non_count;
-
+        }
         /*
         |--------------------------------------------------------------------------
         | All anonymous ticket process information (resolved)
@@ -180,8 +182,9 @@ class AdminController extends Controller
         foreach ($ano_tickets as $ano_t) {
             $avg += $ano_t->created_at->diffInDays($ano_t->updated_at);
         }
+        if($avgAno>0){
         $avgAno /= $ano_count;
-
+        }
         /*
         |--------------------------------------------------------------------------
         | Complaint process information (resolved)
@@ -220,7 +223,9 @@ class AdminController extends Controller
         foreach ($complaint_tickets as $c_t) {
             $avgComp += $c_t->created_at->diffInDays($c_t->updated_at);
         }
+        if($avgComp>0){
         $avgComp /= $complaint_count;
+        }
 
 
         /*
@@ -261,8 +266,9 @@ class AdminController extends Controller
         foreach ($feedback_tickets as $f_t) {
             $avgFeed += $f_t->created_at->diffInDays($f_t->updated_at);
         }
+        if($avgFeed>0){
         $avgFeed /= $feedback_count;
-
+        }
         /*
         |--------------------------------------------------------------------------
         | remark process information (resolved)
@@ -301,8 +307,9 @@ class AdminController extends Controller
         foreach ($remark_tickets as $r_t) {
             $avgRemark += $r_t->created_at->diffInDays($r_t->updated_at);
         }
+        if($avgRemark>0){
         $avgRemark /= $remark_count;
-
+        }
         /*
         |--------------------------------------------------------------------------
         | Appeal process information (resolved)
@@ -341,8 +348,9 @@ class AdminController extends Controller
         foreach ($appeal_tickets as $a_t) {
             $avgApp += $a_t->created_at->diffInDays($a_t->updated_at);
         }
+        if($avgApp>0){
         $avgApp /= $appeal_count;
-
+        }
 
         /*
         |--------------------------------------------------------------------------
