@@ -18,10 +18,10 @@
         </div>
         <label form="date" class="col-form-label col-sm-2">To Date </label>
         <div class = "col-sm-3">
-          <input type= "date" class = "form control input-sm" id ="to" name = "to" required/>
+          <input type= "date" class = "form-control input-sm" id ="to" name = "to" required/>
         </div>
         <div class = "col-sm-2">
-          <button type ="submit" class="btn-primary" name="search" title="Search">Generate Report</button>
+          <button type ="submit" class="btn btn-primary" name="search" title="Search">Generate Report</button>
         </div>
     </div>
   </div>
