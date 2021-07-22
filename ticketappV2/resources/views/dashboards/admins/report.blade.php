@@ -53,19 +53,21 @@ Ticket Report based from {{$dateFrom}} to {{$dateTo}}
         <td>{{$row['user_background']}}</td>
         <td>{{$row['first_name']}}</td>
         <td>{{$row['last_name']}}</td>
+        @if ($row->status == 'To Be Reviewed')
+        <td>Not triaged yet</td>
+        @else
          @foreach($users as $depart)
          @if($row->user_id == $depart->id)
          <td>{{$depart->name}}</td>
          @endif
          @endforeach
+         @endif
     </tr>
 
     @endforeach
   </tbody>
 </table>
 
-<br>
-<br>
 
 
 @endsection
