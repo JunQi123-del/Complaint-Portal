@@ -130,8 +130,6 @@ Ticket Report based from {{$dateFrom}} to {{$dateTo}}
   </tbody>
 </table>
 
-<br>
-<br>
 
 
 @endsection

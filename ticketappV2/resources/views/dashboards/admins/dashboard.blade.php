@@ -23,7 +23,8 @@
           <input type= "date" class = "form-control input-sm" id ="to" name = "to" required/>
         </div>
 
-        <div class = "sm-2">
+        <div class = "col-sm-2">
+
           <button type ="submit" class="btn btn-primary" name="search" title="Search">Generate Report</button>
         </div>
     </div>
