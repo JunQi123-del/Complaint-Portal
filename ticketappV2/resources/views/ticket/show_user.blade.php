@@ -100,7 +100,7 @@
                                     @endif
 
                                 @else
-                                    <img src="{{ Avatar::create("$ticket->user->name")->toBase64() }}" /> 
+                                    <img src="{{ Avatar::create("$ticket->comment->user->name")->toBase64() }}" /> 
                                     <span>{{$ticket->comment->user->name}}  -  {{$ticket->comment->created_at->diffForHumans()}}</span>
                                 @endif
 
