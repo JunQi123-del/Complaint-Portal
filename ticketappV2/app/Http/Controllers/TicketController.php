@@ -169,11 +169,10 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        $ticket = Ticket::findOrFail($id); 
+        $ticket = Ticket::findOrFail($id);
 
         return view('ticket.show')
                 ->with('ticket', $ticket);
-
     }
 
     /**
